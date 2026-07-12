@@ -45,7 +45,12 @@ test("renders a separate English route and local maintenance assets", async () =
   assert.match(html, /AI agents &amp; research workflows/);
   assert.match(html, /CORRESPONDING AUTHOR/);
   assert.match(html, /SECOND AUTHOR/);
-  assert.match(html, /href="\/" lang="zh-CN">中文<\/a>/);
+  assert.match(html, /<a[^>]*href="\/"[^>]*lang="zh-CN"[^>]*>中文<\/a>/);
+  assert.match(html, /MAJOR REVISION RETURNED · AWAITING DECISION/);
+  assert.match(html, /<link rel="canonical" href="https:\/\/xiuling-wang\.pages\.dev\/en\/"/);
+  assert.match(html, /<meta property="og:title" content="Xiuling Wang \| Microbial Ecologist"/);
+  assert.match(html, /<meta property="og:locale" content="en_US"/);
+  assert.match(html, /<meta name="twitter:title" content="Xiuling Wang \| Microbial Ecologist"/);
   assert.match(html, /src="\/site-qr\.svg"/);
   assert.match(html, /ORCID.*Google Scholar.*LinkedIn.*ResearchGate.*GitHub/s);
   assert.match(html, /https:\/\/github\.com\/Xiuling-Wang/);

@@ -18,10 +18,10 @@ The site should feel:
 
 - Primary clean URL: `https://xiuling-wang.pages.dev/`
 - English: `https://xiuling-wang.pages.dev/en/`
-- Secondary Sites mirror: `https://soil-microbe-career.wangxiuling0828chris.chatgpt.site`
+- Secondary GitHub Pages mirror: `https://xiuling-wang.github.io/`
 - GitHub profile: `https://github.com/Xiuling-Wang`
 
-The Sites URL cannot currently be renamed through the existing project controls. Do not claim that its account-derived hostname can be removed without a custom domain.
+Cloudflare Pages is the only primary public website. Do not create or reference additional hosted mirrors beyond the existing GitHub Pages fallback.
 
 ## Source of truth
 
@@ -111,9 +111,9 @@ Prefer targeted CSS/component improvements over a wholesale framework rewrite. P
 
 ## Deployment model
 
-Two public versions are maintained:
+Two public endpoints are maintained from the same static export:
 
 - Cloudflare Pages: export `docs/` with `npm run export:github`, then deploy with `npx wrangler pages deploy docs/ --project-name=xiuling-wang --branch=github`.
 - GitHub Pages: export `docs/` with `npm run export:github`, then publish the repository `Xiuling-Wang/Xiuling-Wang.github.io` from `main:/docs`.
 
-Both versions should be updated from the same source. Do not hand-edit generated files under `docs/`; regenerate them.
+Both endpoints should be updated from the same source. Do not hand-edit generated files under `docs/`; regenerate them.

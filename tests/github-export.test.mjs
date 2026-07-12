@@ -20,4 +20,10 @@ test("GitHub Pages export is framework-free static HTML", async () => {
 
   assert.match(zh, /我在微生物生态和数据之间工作/);
   assert.match(en, /I work at the intersection of microbial ecology and data/);
+  assert.match(zh, /<html lang="zh-CN">/);
+  assert.match(en, /<html lang="en">/);
+  assert.match(en, /<link rel="canonical" href="https:\/\/xiuling-wang\.pages\.dev\/en\/"/);
+  assert.match(en, /<meta property="og:title" content="Xiuling Wang \| Microbial Ecologist"/);
+  assert.match(en, /<meta property="og:locale" content="en_US"/);
+  assert.doesNotMatch(en, /<meta property="og:title" content="王秀玲/);
 });

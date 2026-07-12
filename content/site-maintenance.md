@@ -42,7 +42,7 @@ SITE_URL=https://your-domain.example npm run qr
 - Rhizosphere manuscript source package: `/Users/xwang/Academia/paper/04_Master_ITS/Rhizosphere/R2_submission_2026-07-11`
 - BMC Microbiology revision package: `/Users/xwang/带学生/毛晨怡/final_outputs/BMC_Microbiology投稿/提交上传`
 
-The public titles, author roles, and statuses extracted from these packages are stored in `app/components/AcademicHome.tsx`, so the deployed website does not depend on files outside this project.
+The public titles, author roles, and statuses extracted from these packages are stored in `app/components/AcademicHome.tsx`, so the deployed website does not depend on files outside this project. The BMC Microbiology major revision has been returned and is awaiting a decision.
 
 ## Profile link order
 
@@ -59,13 +59,12 @@ ResearchGate remains after ORCID, Google Scholar, and LinkedIn because the curre
 - Primary: `https://xiuling-wang.pages.dev/`
 - English: `https://xiuling-wang.pages.dev/en/`
 - GitHub Pages (legacy): `https://xiuling-wang.github.io/` — kept as secondary mirror.
-- The Sites deployment remains a secondary mirror.
 
 A separately purchased custom domain can still be connected later if desired.
 
-## Dual deployment and GitHub scroll safety
+## Dual deployment and scroll safety
 
-- `npm test` builds the Sites version, regenerates the static GitHub export, and validates both.
+- `npm test` builds the site, regenerates the shared static export, and validates the Cloudflare and GitHub artifact.
 - `scripts/export-github-pages.mjs` deliberately removes vinext hydration and RSC scripts from `docs/index.html` and `docs/en/index.html`.
 - GitHub Pages must remain plain static HTML/CSS so framework navigation cannot intercept anchor links or lock the scroll position.
 - Do not copy the raw server-rendered HTML into `docs/` without the sanitisation step.

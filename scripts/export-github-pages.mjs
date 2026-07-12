@@ -29,11 +29,17 @@ async function render(pathname) {
     .replace(/<link\b[^>]*\brel=["']modulepreload["'][^>]*>/gi, "");
 }
 
+function setDocumentLanguage(html, language) {
+  return html.replace(/<html\b[^>]*\blang=["'][^"']*["']/, `<html lang="${language}"`);
+}
+
 await rm(outputRoot, { recursive: true, force: true });
 await mkdir(outputRoot, { recursive: true });
 await cp(clientRoot, outputRoot, { recursive: true });
 
-const [chineseHtml, englishHtml] = await Promise.all([render("/"), render("/en")]);
+const [rawChineseHtml, rawEnglishHtml] = await Promise.all([render("/"), render("/en")]);
+const chineseHtml = setDocumentLanguage(rawChineseHtml, "zh-CN");
+const englishHtml = setDocumentLanguage(rawEnglishHtml, "en");
 await writeFile(new URL("index.html", outputRoot), chineseHtml);
 await mkdir(new URL("en/", outputRoot), { recursive: true });
 await writeFile(new URL("en/index.html", outputRoot), englishHtml);

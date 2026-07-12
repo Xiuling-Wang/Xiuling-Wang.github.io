@@ -11,8 +11,21 @@ const eslintConfig = defineConfig([
     ".next/**",
     "out/**",
     "build/**",
+    "dist/**",
+    "docs/**",
+    ".wrangler/**",
     "next-env.d.ts",
   ]),
+  {
+    rules: {
+      // The production site is a static export and deliberately serves local
+      // public assets without a runtime image optimiser.
+      "@next/next/no-img-element": "off",
+      // Full-page language switches remain ordinary links in the framework-free
+      // static export so no client-side router is required.
+      "@next/next/no-html-link-for-pages": "off",
+    },
+  },
 ]);
 
 export default eslintConfig;

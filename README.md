@@ -23,6 +23,6 @@ npm run qr
 npm run export:github
 ```
 
-The static GitHub Pages build is written to `docs/`. The Sites-compatible build is written to `dist/`.
+The production-ready static build is written to `docs/` and is deployed to both Cloudflare Pages and GitHub Pages. `dist/` is an intermediate vinext build directory.
 
 Content and migration notes are stored in [`content/site-maintenance.md`](content/site-maintenance.md). Runtime images, the QR code, and the social-sharing card are stored in `public/`.

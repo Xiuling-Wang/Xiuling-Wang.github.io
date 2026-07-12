@@ -131,7 +131,7 @@ const publications = [
     journal: "Rhizosphere", metricZh: "JCR 2025 · IF 3.5 · Q1", metricEn: "JCR 2025 · IF 3.5 · Q1", href: "https://www.sciencedirect.com/journal/rhizosphere",
   },
   {
-    yearZh: "审稿中", yearEn: "IN REVIEW", roleZh: "通讯", roleEn: "CORRESPONDING AUTHOR", statusZh: "大修返修", statusEn: "MAJOR REVISION",
+    yearZh: "审稿中", yearEn: "IN REVIEW", roleZh: "通讯", roleEn: "CORRESPONDING AUTHOR", statusZh: "大修已返 · 待决定", statusEn: "MAJOR REVISION RETURNED · AWAITING DECISION",
     title: "Depth-dependent differences between direct total DNA and an intracellular-DNA-enriched fraction in bulk-soil bacterial and fungal communities of a Lonicera japonica field",
     journal: "BMC Microbiology", metricZh: "JCR 2025 · IF 5.4 · Q1", metricEn: "JCR 2025 · IF 5.4 · Q1", href: "https://link.springer.com/journal/12866",
   },
@@ -243,7 +243,7 @@ export default function AcademicHome({ locale }: { locale: Locale }) {
           <div className="language-switch" aria-label="Language">
             <a className={isZh ? "active" : ""} href="/" lang="zh-CN">中文</a>
             <span>/</span>
-            <a className={!isZh ? "active" : ""} href="/en" lang="en">EN</a>
+            <a className={!isZh ? "active" : ""} href="/en/" lang="en">EN</a>
           </div>
           <a className="nav-cta" href="mailto:wang.xiuling@outlook.com">{isZh ? "联系我" : "Contact"} <ArrowUpRight size={14} /></a>
         </div>
