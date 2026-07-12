@@ -1,0 +1,62 @@
+# Xiuling Wang academic website — maintenance notes
+
+This folder keeps the public content and update rules needed to maintain or migrate the website. Runtime images are stored in `public/`; website code is stored in `app/`.
+
+## Public routes
+
+- Chinese: `/`
+- English: `/en`
+- The language switch in the upper-right links between these two routes.
+
+## Local assets
+
+- `public/xiuling-mountains.jpg` — hero photograph, derived from `/Users/xwang/Job/IMG_7729.JPG`
+- `public/site-qr.svg` — QR code for the primary GitHub Pages URL
+- `public/og-xiuling-v2.png` — bilingual social-sharing card
+
+All images used by the website must remain inside `public/`. Do not hotlink profile images or QR codes.
+
+## Updating the QR code
+
+The generator is stored at `scripts/generate-qr.mjs`. After a custom domain is connected, regenerate the QR code with:
+
+```bash
+SITE_URL=https://your-domain.example npm run qr
+```
+
+## Publication update rules
+
+1. Author role labels are deliberately compact:
+   - first and corresponding author: `一作` / `FIRST AUTHOR`
+   - corresponding author but not first: `通讯` / `CORRESPONDING AUTHOR`
+   - second author: `二作` / `SECOND AUTHOR`
+   - all other positions: `co-author` / `CO-AUTHOR`
+2. Active journals use the latest available JCR year. Write `IF`, not `JIF`.
+3. Science of the Total Environment keeps its 2024 publication-year metric: `JCR 2024 · IF 8.0 · Q1`.
+4. Update both Chinese and English status labels when a manuscript changes stage.
+5. After acceptance, replace the journal-home link with the DOI and add the final year, volume, issue, and article number.
+6. The visible website update month is stored in both language blocks in `app/components/AcademicHome.tsx`.
+
+## Current manuscript evidence
+
+- Rhizosphere manuscript source package: `/Users/xwang/Academia/paper/04_Master_ITS/Rhizosphere/R2_submission_2026-07-11`
+- BMC Microbiology revision package: `/Users/xwang/带学生/毛晨怡/final_outputs/BMC_Microbiology投稿/提交上传`
+
+The public titles, author roles, and statuses extracted from these packages are stored in `app/components/AcademicHome.tsx`, so the deployed website does not depend on files outside this project.
+
+## Profile link order
+
+1. ORCID
+2. Google Scholar
+3. LinkedIn
+4. ResearchGate
+
+ResearchGate is intentionally last because the current profile cannot be maintained through the former institutional email. Replace its URL when a new profile is available.
+
+## Public URLs
+
+- Primary: `https://xiuling-wang.github.io/`
+- English: `https://xiuling-wang.github.io/en/`
+- The Sites deployment remains a secondary mirror.
+
+The GitHub Pages root address contains only the public GitHub username and avoids the account-derived Sites subdomain. A separately purchased custom domain can still be connected later if desired.
