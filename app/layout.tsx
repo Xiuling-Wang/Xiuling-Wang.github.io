@@ -4,8 +4,8 @@ import "./globals.css";
 
 export async function generateMetadata(): Promise<Metadata> {
   const requestHeaders = await headers();
-  const host = requestHeaders.get("x-forwarded-host") ?? requestHeaders.get("host") ?? "localhost:3000";
-  const protocol = requestHeaders.get("x-forwarded-proto") ?? (host.startsWith("localhost") ? "http" : "https");
+  const host = requestHeaders.get("x-forwarded-host") ?? requestHeaders.get("host") ?? "xiuling-wang.pages.dev";
+  const protocol = requestHeaders.get("x-forwarded-proto") ?? "https";
   const siteUrl = new URL(`${protocol}://${host}`);
   const title = "王秀玲 Xiuling Wang｜微生物生态研究者";
   const description = "王秀玲的学术与求职主页：微生物生态、气候与深度梯度、iDNA/eDNA、根际与食用菌微生物、真菌群落及微生物组数据分析。";
