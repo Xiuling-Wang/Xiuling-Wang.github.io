@@ -11,7 +11,7 @@ This folder keeps the public content and update rules needed to maintain or migr
 ## Local assets
 
 - `public/xiuling-mountains.jpg` — hero photograph, derived from `/Users/xwang/Job/IMG_7729.JPG`
-- `public/site-qr.svg` — QR code for the primary GitHub Pages URL
+- `public/site-qr.svg` — QR code for the primary Cloudflare Pages URL
 - `public/og-xiuling-v3.png` — current bilingual social-sharing card (`MICROBES · ECOLOGY · DATA`)
 
 All images used by the website must remain inside `public/`. Do not hotlink profile images or QR codes.
@@ -56,11 +56,12 @@ ResearchGate remains after ORCID, Google Scholar, and LinkedIn because the curre
 
 ## Public URLs
 
-- Primary: `https://xiuling-wang.github.io/`
-- English: `https://xiuling-wang.github.io/en/`
+- Primary: `https://xiuling-wang.pages.dev/`
+- English: `https://xiuling-wang.pages.dev/en/`
+- GitHub Pages (legacy): `https://xiuling-wang.github.io/` — kept as secondary mirror.
 - The Sites deployment remains a secondary mirror.
 
-The GitHub Pages root address contains only the public GitHub username and avoids the account-derived Sites subdomain. A separately purchased custom domain can still be connected later if desired.
+A separately purchased custom domain can still be connected later if desired.
 
 ## Dual deployment and GitHub scroll safety
 

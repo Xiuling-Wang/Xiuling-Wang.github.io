@@ -9,7 +9,7 @@ const { default: worker } = await import(workerUrl.href);
 
 async function render(pathname) {
   const response = await worker.fetch(
-    new Request(`https://xiuling-wang.github.io${pathname}`, {
+    new Request(`https://xiuling-wang.pages.dev${pathname}`, {
       headers: { accept: "text/html" },
     }),
     { ASSETS: { fetch: async () => new Response("Not found", { status: 404 }) } },

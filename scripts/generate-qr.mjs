@@ -1,6 +1,6 @@
 import QRCode from "qrcode";
 
-const siteUrl = process.env.SITE_URL ?? "https://xiuling-wang.github.io/";
+const siteUrl = process.env.SITE_URL ?? "https://xiuling-wang.pages.dev/";
 
 await QRCode.toFile("public/site-qr.svg", siteUrl, {
   type: "svg",

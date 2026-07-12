@@ -4,8 +4,8 @@ Bilingual academic and career website for Xiuling Wang, a microbial ecologist wo
 
 ## Public website
 
-- Chinese: https://xiuling-wang.github.io/
-- English: https://xiuling-wang.github.io/en/
+- Chinese: https://xiuling-wang.pages.dev/
+- English: https://xiuling-wang.pages.dev/en/
 - GitHub profile: https://github.com/Xiuling-Wang
 
 ## Local development

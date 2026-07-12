@@ -16,8 +16,8 @@ The site should feel:
 
 ## Public URLs
 
-- Primary clean URL: `https://xiuling-wang.github.io/`
-- English: `https://xiuling-wang.github.io/en/`
+- Primary clean URL: `https://xiuling-wang.pages.dev/`
+- English: `https://xiuling-wang.pages.dev/en/`
 - Secondary Sites mirror: `https://soil-microbe-career.wangxiuling0828chris.chatgpt.site`
 - GitHub profile: `https://github.com/Xiuling-Wang`
 
@@ -70,7 +70,7 @@ Do not revert the main identity to "Soil Microbial Ecologist". Soil is a major s
 2. Keep the language switch in the upper-right.
 3. Keep the hero photograph on the left and unframed.
 4. Do not put `Chile`, `0–200 cm`, or EarthShape labels on the photograph; it was taken in Italy.
-5. The QR code opens as a large centred overlay and points to `https://xiuling-wang.github.io/`.
+5. The QR code opens as a large centred overlay and points to `https://xiuling-wang.pages.dev/`.
 6. Profile links remain ordered: ORCID, Google Scholar, LinkedIn, ResearchGate, GitHub.
 7. Footer copyright uses `Xiuling Wang`, including on the Chinese route.
 8. Do not restore the publication explanatory sentence above the list.
@@ -113,7 +113,7 @@ Prefer targeted CSS/component improvements over a wholesale framework rewrite. P
 
 Two public versions are maintained:
 
+- Cloudflare Pages: export `docs/` with `npm run export:github`, then deploy with `npx wrangler pages deploy docs/ --project-name=xiuling-wang --branch=github`.
 - GitHub Pages: export `docs/` with `npm run export:github`, then publish the repository `Xiuling-Wang/Xiuling-Wang.github.io` from `main:/docs`.
-- Sites: build with `npm run build`, package, save a version, and deploy through the existing Sites project.
 
 Both versions should be updated from the same source. Do not hand-edit generated files under `docs/`; regenerate them.

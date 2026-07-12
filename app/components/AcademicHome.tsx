@@ -14,7 +14,7 @@ import {
 
 type Locale = "zh" | "en";
 
-const siteUrl = "https://xiuling-wang.github.io/";
+const siteUrl = "https://xiuling-wang.pages.dev/";
 
 const copy = {
   zh: {

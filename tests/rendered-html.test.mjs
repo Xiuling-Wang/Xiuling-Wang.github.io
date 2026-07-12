@@ -49,5 +49,5 @@ test("renders a separate English route and local maintenance assets", async () =
   assert.match(html, /src="\/site-qr\.svg"/);
   assert.match(html, /ORCID.*Google Scholar.*LinkedIn.*ResearchGate.*GitHub/s);
   assert.match(html, /https:\/\/github\.com\/Xiuling-Wang/);
-  assert.match(html, /https:\/\/xiuling-wang\.github\.io\//);
+  assert.match(html, /https:\/\/xiuling-wang\.pages\.dev\//);
 });
