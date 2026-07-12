@@ -21,15 +21,15 @@ const copy = {
     nav: { profile: "简历", publications: "研究成果", background: "履历", contact: "联系" },
     top: "返回顶部",
     qr: "扫描二维码打开网站",
-    role: "Soil Microbial Ecologist · Open to New Opportunities",
+    role: "Microbial Ecologist · Open to New Opportunities",
     hello: "Hi，我是秀玲。",
-    focus: "我在土壤微生物和数据之间工作。",
-    intro: "研究气候、土壤深度和植物如何塑造微生物群落，也把实验、统计与可复现的数据分析连接成完整的研究流程。",
+    focus: "我在微生物生态和数据之间工作。",
+    intro: "研究气候、深度、宿主与环境如何塑造细菌和真菌群落，并把实验、统计与可复现的数据分析连接成完整的研究流程。",
     explore: "查看研究成果",
     profile: "简介",
     profileText: [
-      "我的研究经历连接地理学、生态学、生物化学与微生物组数据科学。博士阶段在波茨坦大学和德国亥姆霍兹地学研究中心（GFZ）开展研究，聚焦智利沿海气候梯度及 0–200 cm 土壤剖面的细菌群落。",
-      "我能够独立推进实验设计、低生物量样品 DNA 提取、qPCR 与测序准备，并完成微生物群落分析、统计建模、网络分析、科学可视化和论文写作。",
+      "我的研究经历连接地理学、生态学、生物化学与微生物组数据科学。博士阶段在波茨坦大学和德国亥姆霍兹地学研究中心（GFZ）开展研究，重点研究智利气候梯度与深层土壤微生物群落，同时开展根际、食用菌表面细菌与真菌群落研究。",
+      "我能够独立推进实验设计、低生物量样品 DNA 提取、qPCR 与测序准备，并完成微生物群落分析、统计建模、网络分析、科学可视化和论文写作。未来也希望将研究兴趣延伸到牙菌斑等人体相关微生物群落及跨环境综述。",
     ],
     requestCv: "索取完整简历",
     facts: [
@@ -38,13 +38,12 @@ const copy = {
       ["工作语言", "中文（母语）· 英语"],
     ],
     research: "研究方向",
-    researchIntro: "从环境梯度到微生物响应，关注能够解释、复现并经得住检验的生态学证据。",
+    researchIntro: "从土壤、根际和食用菌到更广泛的宿主相关环境，研究微生物群落如何形成、变化并发挥作用。",
     project: "主要项目",
     projectTitle: "德国—智利 EarthShape BIOSOILS 合作项目",
     projectText: "参与跨气候区深层土壤研究，围绕气候、土壤深度与微生物群落开展实验和数据分析；优化低生物量土壤 DNA 提取方案，相关流程被 GFZ 实验室采用。",
     projectLink: "查看项目介绍",
     publications: "学术成果",
-    publicationsIntro: "论文与在审稿件按当前状态列出；期刊指标注明对应的 JCR 年份。",
     background: "履历",
     education: "教育经历",
     experience: "研究经历",
@@ -53,21 +52,21 @@ const copy = {
     contact: "合作与联系",
     contactText: "欢迎就研究合作、数据分析岗位、联合项目及未来学生机会联系。",
     updated: "网站更新：2026.07",
-    rights: "© 2026 王秀玲",
+    rights: "© 2026 Xiuling Wang",
   },
   en: {
     nav: { profile: "Profile", publications: "Research", background: "Experience", contact: "Contact" },
     top: "Back to top",
     qr: "Scan to open this website",
-    role: "Soil Microbial Ecologist · Open to New Opportunities",
+    role: "Microbial Ecologist · Open to New Opportunities",
     hello: "Hi, I’m Xiuling.",
-    focus: "I work at the intersection of soil microbiomes and data.",
-    intro: "I study how climate, soil depth, and plants shape microbial communities, connecting experiments, statistics, and reproducible data analysis into complete research workflows.",
+    focus: "I work at the intersection of microbial ecology and data.",
+    intro: "I study how climate, depth, hosts, and environments shape bacterial and fungal communities, connecting experiments, statistics, and reproducible data analysis into complete research workflows.",
     explore: "Explore my research",
     profile: "Profile",
     profileText: [
-      "My research connects geography, ecology, biochemistry, and microbiome data science. During my PhD at the University of Potsdam and the GFZ German Research Centre for Geosciences, I investigated bacterial communities across Chilean climate gradients and soil profiles from 0 to 200 cm.",
-      "I can independently lead research from experimental design, low-biomass soil DNA extraction, qPCR, and sequencing preparation to community analysis, statistical modelling, network analysis, scientific visualisation, and manuscript writing.",
+      "My research connects geography, ecology, biochemistry, and microbiome data science. During my PhD at the University of Potsdam and the GFZ German Research Centre for Geosciences, I focused on microbial communities across Chilean climate gradients and deep-soil profiles, alongside work on rhizosphere and edible-mushroom bacterial and fungal communities.",
+      "I can independently lead research from experimental design, low-biomass DNA extraction, qPCR, and sequencing preparation to community analysis, statistical modelling, network analysis, scientific visualisation, and manuscript writing. I am also interested in future work on human-associated communities such as dental plaque and in cross-environment reviews.",
     ],
     requestCv: "Request my full CV",
     facts: [
@@ -76,13 +75,12 @@ const copy = {
       ["Languages", "Chinese (native) · English"],
     ],
     research: "Research Areas",
-    researchIntro: "From environmental gradients to microbial responses, I focus on ecological evidence that is interpretable, reproducible, and robust.",
+    researchIntro: "From soils, rhizospheres, and edible fungi to broader host-associated environments, I study how microbial communities assemble, change, and function.",
     project: "Selected Project",
     projectTitle: "Germany–Chile EarthShape BIOSOILS Project",
     projectText: "I contributed to deep-soil research across climate zones, linking climate, soil depth, and microbial communities through experiments and data analysis. I also optimised a low-biomass soil DNA extraction workflow adopted by the GFZ laboratory.",
     projectLink: "View the project",
     publications: "Publications & Manuscripts",
-    publicationsIntro: "Published papers and manuscripts are listed by current status, with the relevant JCR metric year stated for each journal.",
     background: "Experience",
     education: "Education",
     experience: "Research Experience",
@@ -116,6 +114,13 @@ const researchAreas = [
     enTitle: "Rhizosphere & food microbiology",
     zhDetail: "从药用植物根际群落到食用菌保鲜，研究微生物群落与植物、环境及生产过程的联系。",
     enDetail: "Connecting microbial communities with plants, environments, and production processes, from medicinal-plant rhizospheres to mushroom preservation.",
+  },
+  {
+    number: "04",
+    zhTitle: "真菌与跨环境微生物组",
+    enTitle: "Fungi & cross-environment microbiomes",
+    zhDetail: "关注真菌、食用菌及牙菌斑等不同环境中的微生物群落，作为未来研究与综述方向。",
+    enDetail: "Extending future research and review interests to fungi, edible mushrooms, dental plaque, and microbial communities across contrasting environments.",
   },
 ];
 
@@ -225,7 +230,7 @@ export default function AcademicHome({ locale }: { locale: Locale }) {
           </a>
           <a className="wordmark" href="#top" aria-label={t.top}>
             <span>Xiuling Wang</span>
-            <small>soil · microbes · data</small>
+            <small>microbes · ecology · data</small>
           </a>
         </div>
         <nav aria-label={isZh ? "主导航" : "Main navigation"}>
@@ -323,7 +328,6 @@ export default function AcademicHome({ locale }: { locale: Locale }) {
       <section className="publications section" id="publications">
         <div className="section-heading publication-heading">
           <div className="section-title"><span>04</span><h2>{t.publications}</h2></div>
-          <p>{t.publicationsIntro}</p>
         </div>
         <div className="publication-list" aria-label={isZh ? "学术成果列表" : "Publications and manuscripts"}>
           {publications.map((publication, index) => (

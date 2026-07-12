@@ -12,7 +12,7 @@ This folder keeps the public content and update rules needed to maintain or migr
 
 - `public/xiuling-mountains.jpg` — hero photograph, derived from `/Users/xwang/Job/IMG_7729.JPG`
 - `public/site-qr.svg` — QR code for the primary GitHub Pages URL
-- `public/og-xiuling-v2.png` — bilingual social-sharing card
+- `public/og-xiuling-v3.png` — current bilingual social-sharing card (`MICROBES · ECOLOGY · DATA`)
 
 All images used by the website must remain inside `public/`. Do not hotlink profile images or QR codes.
 
@@ -50,8 +50,9 @@ The public titles, author roles, and statuses extracted from these packages are 
 2. Google Scholar
 3. LinkedIn
 4. ResearchGate
+5. GitHub
 
-ResearchGate is intentionally last because the current profile cannot be maintained through the former institutional email. Replace its URL when a new profile is available.
+ResearchGate remains after ORCID, Google Scholar, and LinkedIn because the current profile cannot be maintained through the former institutional email. GitHub follows as the code and website source profile. Replace the ResearchGate URL when a new profile is available.
 
 ## Public URLs
 
@@ -60,3 +61,10 @@ ResearchGate is intentionally last because the current profile cannot be maintai
 - The Sites deployment remains a secondary mirror.
 
 The GitHub Pages root address contains only the public GitHub username and avoids the account-derived Sites subdomain. A separately purchased custom domain can still be connected later if desired.
+
+## Dual deployment and GitHub scroll safety
+
+- `npm test` builds the Sites version, regenerates the static GitHub export, and validates both.
+- `scripts/export-github-pages.mjs` deliberately removes vinext hydration and RSC scripts from `docs/index.html` and `docs/en/index.html`.
+- GitHub Pages must remain plain static HTML/CSS so framework navigation cannot intercept anchor links or lock the scroll position.
+- Do not copy the raw server-rendered HTML into `docs/` without the sanitisation step.

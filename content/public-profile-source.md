@@ -2,7 +2,7 @@
 
 ## Positioning
 
-- Soil microbial ecologist
+- Microbial ecologist with strong soil, rhizosphere, fungal, and food-microbiology experience
 - Open to research, microbiome data analysis, and AI-enabled research workflow opportunities
 - Website is designed for current job applications and future lab, student recruitment, and career-record use
 
@@ -11,6 +11,7 @@
 - Climate gradients and deep-soil microbiomes
 - Living and relic microbial communities using iDNA/eDNA separation
 - Rhizosphere and food microbial ecology
+- Fungi and cross-environment microbiomes, including future interest in dental-plaque communities and comparative reviews
 
 ## Technical profile
 

@@ -1,6 +1,6 @@
 # Xiuling Wang — Academic Website
 
-Bilingual academic and career website for Xiuling Wang, a soil microbial ecologist working across climate gradients, deep-soil microbiomes, iDNA/eDNA, rhizosphere ecology, microbial community analysis, R, and AI-assisted research workflows.
+Bilingual academic and career website for Xiuling Wang, a microbial ecologist working across climate gradients, deep-soil microbiomes, iDNA/eDNA, rhizosphere and edible-fungi ecology, bacterial and fungal community analysis, R, and AI-assisted research workflows.
 
 ## Public website
 

@@ -7,8 +7,8 @@ export async function generateMetadata(): Promise<Metadata> {
   const host = requestHeaders.get("x-forwarded-host") ?? requestHeaders.get("host") ?? "localhost:3000";
   const protocol = requestHeaders.get("x-forwarded-proto") ?? (host.startsWith("localhost") ? "http" : "https");
   const siteUrl = new URL(`${protocol}://${host}`);
-  const title = "王秀玲 Xiuling Wang｜土壤微生物生态研究者";
-  const description = "王秀玲的学术与求职主页：土壤微生物生态、气候与深度梯度、iDNA/eDNA、根际微生物与微生物组数据分析。";
+  const title = "王秀玲 Xiuling Wang｜微生物生态研究者";
+  const description = "王秀玲的学术与求职主页：微生物生态、气候与深度梯度、iDNA/eDNA、根际与食用菌微生物、真菌群落及微生物组数据分析。";
 
   return {
     metadataBase: siteUrl,
@@ -27,13 +27,13 @@ export async function generateMetadata(): Promise<Metadata> {
       type: "website",
       url: siteUrl,
       locale: "zh_CN",
-      images: [{ url: new URL("/og-xiuling-v2.png", siteUrl).toString(), width: 1200, height: 630, alt: "Xiuling Wang · Soil · Microbes · Data" }],
+      images: [{ url: new URL("/og-xiuling-v3.png", siteUrl).toString(), width: 1200, height: 630, alt: "Xiuling Wang · Microbes · Ecology · Data" }],
     },
     twitter: {
       card: "summary_large_image",
       title,
       description,
-      images: [new URL("/og-xiuling-v2.png", siteUrl).toString()],
+      images: [new URL("/og-xiuling-v3.png", siteUrl).toString()],
     },
   };
 }

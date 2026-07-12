@@ -28,6 +28,8 @@ test("renders the Chinese academic homepage with the requested publication label
   assert.match(html, /JCR 2025 · IF 5\.4 · Q1/);
   assert.match(html, /JCR 2024（发表年度）· IF 8\.0 · Q1/);
   assert.doesNotMatch(html, /JIF|LAST AUTHOR|CO-CORRESPONDING|共同通讯|WHAT&#x27;S NEXT/);
+  assert.doesNotMatch(html, /论文与在审稿件按当前状态列出/);
+  assert.match(html, /真菌与跨环境微生物组/);
   assert.doesNotMatch(html, /class="photo-note"/);
   assert.match(html, /href="#site-qr-modal"/);
   assert.match(html, /id="site-qr-modal"/);
@@ -39,7 +41,7 @@ test("renders a separate English route and local maintenance assets", async () =
 
   const html = await response.text();
   assert.match(html, /Hi, I’m Xiuling/);
-  assert.match(html, /I work at the intersection of soil microbiomes and data/);
+  assert.match(html, /I work at the intersection of microbial ecology and data/);
   assert.match(html, /AI agents &amp; research workflows/);
   assert.match(html, /CORRESPONDING AUTHOR/);
   assert.match(html, /SECOND AUTHOR/);

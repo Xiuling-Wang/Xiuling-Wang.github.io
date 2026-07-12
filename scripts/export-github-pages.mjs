@@ -20,7 +20,13 @@ async function render(pathname) {
     throw new Error(`Static render failed for ${pathname}: ${response.status}`);
   }
 
-  return response.text();
+  const html = await response.text();
+
+  // GitHub Pages serves static HTML only. Remove the vinext hydration/RSC
+  // scripts so they cannot intercept anchor navigation or alter scroll state.
+  return html
+    .replace(/<script\b[^>]*>[\s\S]*?<\/script>/gi, "")
+    .replace(/<link\b[^>]*\brel=["']modulepreload["'][^>]*>/gi, "");
 }
 
 await rm(outputRoot, { recursive: true, force: true });
