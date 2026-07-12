@@ -32,6 +32,7 @@ SITE_URL=https://your-domain.example npm run qr
    - second author: `二作` / `SECOND AUTHOR`
    - all other positions: `co-author` / `CO-AUTHOR`
 2. Active journals use the latest available JCR year. Write `IF`, not `JIF`.
+   - Rhizosphere: `JCR 2025 · IF 3.9 · Q1` (2025 JCR, released by Clarivate in June 2026; the preceding 2024 IF was 3.5).
 3. Science of the Total Environment keeps its 2024 publication-year metric: `JCR 2024 · IF 8.0 · Q1`.
 4. Update both Chinese and English status labels when a manuscript changes stage.
 5. After acceptance, replace the journal-home link with the DOI and add the final year, volume, issue, and article number.

@@ -45,6 +45,7 @@ test("renders a separate English route and local maintenance assets", async () =
   assert.match(html, /AI agents &amp; research workflows/);
   assert.match(html, /CORRESPONDING AUTHOR/);
   assert.match(html, /SECOND AUTHOR/);
+  assert.match(html, /JCR 2025 · IF 3\.9 · Q1/);
   assert.match(html, /<a[^>]*href="\/"[^>]*lang="zh-CN"[^>]*>中文<\/a>/);
   assert.match(html, /MAJOR REVISION RETURNED · AWAITING DECISION/);
   assert.match(html, /<link rel="canonical" href="https:\/\/xiuling-wang\.pages\.dev\/en\/"/);
