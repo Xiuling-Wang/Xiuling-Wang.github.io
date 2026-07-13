@@ -268,10 +268,9 @@ export default function AcademicHome({ locale }: { locale: Locale }) {
         <section className="hero" id="top">
           <figure className="hero-photo">
             <img src="/xiuling-mountains.webp" alt={isZh ? "王秀玲在山间的照片" : "Xiuling Wang in the mountains"} width={1350} height={1800} fetchPriority="high" decoding="async" />
-            <figcaption>{isZh ? "从野外样地到可复现的数据" : "from field sites to reproducible data"}</figcaption>
           </figure>
           <div className="hero-copy">
-            <p className="hero-kicker"><span /> {t.role}</p>
+            <p className="hero-kicker"><span /> <span className="kicker-text">{t.role} <span className="hero-sprout" aria-hidden="true">🌱</span></span></p>
             <h1>{t.hello}</h1>
             <p className="hero-focus">{t.focus}</p>
             <p className="hero-lead">{t.intro}</p>
@@ -385,7 +384,7 @@ export default function AcademicHome({ locale }: { locale: Locale }) {
       </section>
 
       <section className="contact section" id="contact">
-        <p className="contact-label"><span /> {t.contact}</p>
+        <p className="contact-label"><span /> <span className="contact-label-text">{t.contact} <span className="contact-wave" aria-hidden="true">👋</span></span></p>
         <h2>{t.contactText}</h2>
         <div className="contact-row">
           <a className="contact-email" href="mailto:wang.xiuling@outlook.com">wang.xiuling@outlook.com <ArrowUpRight size={22} /></a>
