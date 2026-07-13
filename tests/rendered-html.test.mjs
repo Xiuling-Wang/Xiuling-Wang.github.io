@@ -31,8 +31,8 @@ test("renders the Chinese academic homepage with the requested publication label
   assert.doesNotMatch(html, /JIF|LAST AUTHOR|CO-CORRESPONDING|共同通讯|WHAT&#x27;S NEXT/);
   assert.doesNotMatch(html, /论文与在审稿件按当前状态列出/);
   assert.match(html, /真菌与跨环境微生物组/);
-  assert.match(html, /小修已返 · 待决定/);
-  assert.doesNotMatch(html, /小修已返 · 待接收/);
+  assert.match(html, /已接收 · 制作中/);
+  assert.doesNotMatch(html, /小修已返 · 待决定|小修已返 · 待接收/);
   assert.doesNotMatch(html, /class="photo-note"/);
   assert.match(html, /popovertarget="site-qr-popover"/i);
   assert.match(html, /id="site-qr-popover"/);
@@ -53,6 +53,8 @@ test("renders a separate English route and local maintenance assets", async () =
   assert.match(html, /CORRESPONDING AUTHOR/);
   assert.match(html, /SECOND AUTHOR/);
   assert.match(html, /JCR 2025 · IF 3\.9 · Q1/);
+  assert.match(html, /ACCEPTED · IN PRODUCTION/);
+  assert.doesNotMatch(html, /MINOR REVISION RETURNED · AWAITING DECISION/);
   assert.match(html, /<a[^>]*href="\/"[^>]*lang="zh-CN"[^>]*>中文<\/a>/);
   assert.match(html, /MAJOR REVISION RETURNED · AWAITING DECISION/);
   assert.match(html, /<link rel="canonical" href="https:\/\/xiuling-wang\.pages\.dev\/en\/"/);

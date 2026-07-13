@@ -36,5 +36,6 @@ test("GitHub Pages export is framework-free static HTML", async () => {
   assert.match(robots, /User-agent: \*/);
   assert.match(robots, /Sitemap: https:\/\/xiuling-wang\.pages\.dev\/sitemap\.xml/);
   assert.match(sitemap, /<loc>https:\/\/xiuling-wang\.pages\.dev\/en\/<\/loc>/);
+  assert.match(sitemap, /<lastmod>2026-07-14<\/lastmod>/);
   assert.equal(assets.some((name) => /\.(?:m?js|map)$/.test(name)), false);
 });

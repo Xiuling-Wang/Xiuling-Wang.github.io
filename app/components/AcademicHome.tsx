@@ -126,7 +126,7 @@ const researchAreas = [
 
 const publications = [
   {
-    yearZh: "返修中", yearEn: "IN REVISION", roleZh: "一作", roleEn: "FIRST AUTHOR", statusZh: "小修已返 · 待决定", statusEn: "MINOR REVISION RETURNED · AWAITING DECISION",
+    yearZh: "2026", yearEn: "2026", roleZh: "一作", roleEn: "FIRST AUTHOR", statusZh: "已接收 · 制作中", statusEn: "ACCEPTED · IN PRODUCTION",
     title: "Rhizosphere fungal communities of four Ferula species in their native habitats in northern Xinjiang",
     journal: "Rhizosphere", metricZh: "JCR 2025 · IF 3.9 · Q1", metricEn: "JCR 2025 · IF 3.9 · Q1", href: "https://www.sciencedirect.com/journal/rhizosphere",
   },
