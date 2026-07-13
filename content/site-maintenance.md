@@ -1,6 +1,8 @@
 # Xiuling Wang academic website — maintenance notes
 
-This folder keeps the public content and update rules needed to maintain or migrate the website. Runtime images are stored in `public/`; website code is stored in `app/`.
+This folder keeps the public content and update rules needed to maintain or migrate the website. Website code is stored in `app/`, deployable assets in `public/`, and editable source assets in `assets/source/`.
+
+The GitHub repository is public. Do not add private manuscript files, local absolute paths, account-recovery details, unpublished reviewer correspondence, or credentials to this repository.
 
 ## Public routes
 
@@ -10,7 +12,8 @@ This folder keeps the public content and update rules needed to maintain or migr
 
 ## Local assets
 
-- `public/xiuling-mountains.jpg` — hero photograph, derived from `/Users/xwang/Job/IMG_7729.JPG`
+- `assets/source/xiuling-mountains.jpg` — cleaned, EXIF-free source photograph for future recropping
+- `public/xiuling-mountains.webp` — optimised runtime hero photograph
 - `public/site-qr.svg` — QR code for the primary Cloudflare Pages URL
 - `public/og-xiuling-v3.png` — current bilingual social-sharing card (`MICROBES · ECOLOGY · DATA`)
 
@@ -38,12 +41,11 @@ SITE_URL=https://your-domain.example npm run qr
 5. After acceptance, replace the journal-home link with the DOI and add the final year, volume, issue, and article number.
 6. The visible website update month is stored in both language blocks in `app/components/AcademicHome.tsx`.
 
-## Current manuscript evidence
+## Manuscript evidence
 
-- Rhizosphere manuscript source package: `/Users/xwang/Academia/paper/04_Master_ITS/Rhizosphere/R2_submission_2026-07-11`
-- BMC Microbiology revision package: `/Users/xwang/带学生/毛晨怡/final_outputs/BMC_Microbiology投稿/提交上传`
+The public titles, author roles, and status snapshot are stored in `app/components/AcademicHome.tsx`. Source submissions and reviewer correspondence remain in private manuscript folders outside this public repository. Verify the latest private submission package before changing any title, role, journal, status, IF, quartile, or DOI.
 
-The public titles, author roles, and statuses extracted from these packages are stored in `app/components/AcademicHome.tsx`, so the deployed website does not depend on files outside this project. The BMC Microbiology major revision has been returned and is awaiting a decision.
+Current public status snapshot: the Rhizosphere minor revision and the BMC Microbiology major revision have both been returned and are awaiting decisions.
 
 ## Profile link order
 
@@ -53,7 +55,7 @@ The public titles, author roles, and statuses extracted from these packages are 
 4. ResearchGate
 5. GitHub
 
-ResearchGate remains after ORCID, Google Scholar, and LinkedIn because the current profile cannot be maintained through the former institutional email. GitHub follows as the code and website source profile. Replace the ResearchGate URL when a new profile is available.
+Keep this order unless the public profile URLs change. Replace the ResearchGate URL if a newer maintainable profile becomes available.
 
 ## Public URLs
 
@@ -69,3 +71,34 @@ A separately purchased custom domain can still be connected later if desired.
 - `scripts/export-github-pages.mjs` deliberately removes vinext hydration and RSC scripts from `docs/index.html` and `docs/en/index.html`.
 - GitHub Pages must remain plain static HTML/CSS so framework navigation cannot intercept anchor links or lock the scroll position.
 - Do not copy the raw server-rendered HTML into `docs/` without the sanitisation step.
+
+The app uses separate Chinese and English root layouts, so both local SSR and the static export must retain the correct document language. The exporter keeps a final `lang` safeguard and also removes unused framework JavaScript from `docs/`.
+
+## Visual and responsive guardrails
+
+- Keep the candid mountain photograph on the left on wide screens; do not add Chile or soil-depth labels to the photograph.
+- Keep the identity broad: `Microbial Ecologist`, with soil as a major strength rather than the only scope.
+- Maintain a clear but restrained type hierarchy. Avoid body or label text below 11–12 px.
+- Preserve the compact navigation at tablet and phone widths, 44 px touch targets, visible keyboard focus, reduced-motion support, and the native QR popover.
+- Check at minimum: 1440 px desktop, 1024 px small laptop, 768 px tablet, 390 px phone, 320 px narrow phone, and a short landscape viewport.
+- Keep the page editorial and lively, but avoid generic stock science imagery, excessive animation, fake affiliations, or decorative claims.
+
+## Build and deployment
+
+Run the full local check:
+
+```bash
+npm ci
+npm run lint
+npm test
+```
+
+`npm test` rebuilds `docs/`, checks both languages, verifies the dedicated 404 and crawl files, and confirms that no framework scripts enter the static artifact.
+
+Deploy the same `docs/` artifact to Cloudflare Pages:
+
+```bash
+npx wrangler pages deploy docs/ --project-name=xiuling-wang --branch=github
+```
+
+Push `main` to update the GitHub Pages mirror. Never hand-edit generated files under `docs/`.

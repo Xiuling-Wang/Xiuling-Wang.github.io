@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://xiuling-wang.pages.dev/sitemap.xml

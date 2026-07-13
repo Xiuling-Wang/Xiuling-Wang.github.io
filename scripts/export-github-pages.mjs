@@ -1,4 +1,4 @@
-import { cp, mkdir, rm, writeFile } from "node:fs/promises";
+import { cp, mkdir, readdir, rm, writeFile } from "node:fs/promises";
 
 const outputRoot = new URL("../docs/", import.meta.url);
 const clientRoot = new URL("../dist/client/", import.meta.url);
@@ -37,13 +37,26 @@ await rm(outputRoot, { recursive: true, force: true });
 await mkdir(outputRoot, { recursive: true });
 await cp(clientRoot, outputRoot, { recursive: true });
 
-const [rawChineseHtml, rawEnglishHtml] = await Promise.all([render("/"), render("/en")]);
+// The exported pages contain no client-side framework scripts. Remove the
+// copied JavaScript bundles and Vite bookkeeping so the public artifact stays
+// small and contains only files that a browser can actually request.
+const assetsRoot = new URL("assets/", outputRoot);
+for (const entry of await readdir(assetsRoot, { withFileTypes: true })) {
+  if (entry.isFile() && /\.(?:m?js|map)$/.test(entry.name)) {
+    await rm(new URL(entry.name, assetsRoot));
+  }
+}
+await rm(new URL(".vite/", outputRoot), { recursive: true, force: true });
+await rm(new URL(".assetsignore", outputRoot), { force: true });
+
+const [rawChineseHtml, rawEnglishHtml, rawNotFoundHtml] = await Promise.all([render("/"), render("/en"), render("/404")]);
 const chineseHtml = setDocumentLanguage(rawChineseHtml, "zh-CN");
 const englishHtml = setDocumentLanguage(rawEnglishHtml, "en");
+const notFoundHtml = setDocumentLanguage(rawNotFoundHtml, "zh-CN");
 await writeFile(new URL("index.html", outputRoot), chineseHtml);
 await mkdir(new URL("en/", outputRoot), { recursive: true });
 await writeFile(new URL("en/index.html", outputRoot), englishHtml);
-await writeFile(new URL("404.html", outputRoot), chineseHtml);
+await writeFile(new URL("404.html", outputRoot), notFoundHtml);
 await writeFile(new URL(".nojekyll", outputRoot), "");
 
 console.log("GitHub Pages export created in docs/ for / and /en/.");

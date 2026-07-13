@@ -1,11 +1,15 @@
 import assert from "node:assert/strict";
-import { readFile } from "node:fs/promises";
+import { readdir, readFile } from "node:fs/promises";
 import test from "node:test";
 
 test("GitHub Pages export is framework-free static HTML", async () => {
-  const [zh, en] = await Promise.all([
+  const [zh, en, notFound, robots, sitemap, assets] = await Promise.all([
     readFile(new URL("../docs/index.html", import.meta.url), "utf8"),
     readFile(new URL("../docs/en/index.html", import.meta.url), "utf8"),
+    readFile(new URL("../docs/404.html", import.meta.url), "utf8"),
+    readFile(new URL("../docs/robots.txt", import.meta.url), "utf8"),
+    readFile(new URL("../docs/sitemap.xml", import.meta.url), "utf8"),
+    readdir(new URL("../docs/assets/", import.meta.url)),
   ]);
 
   for (const html of [zh, en]) {
@@ -26,4 +30,11 @@ test("GitHub Pages export is framework-free static HTML", async () => {
   assert.match(en, /<meta property="og:title" content="Xiuling Wang \| Microbial Ecologist"/);
   assert.match(en, /<meta property="og:locale" content="en_US"/);
   assert.doesNotMatch(en, /<meta property="og:title" content="王秀玲/);
+  assert.match(notFound, /页面未找到/);
+  assert.match(notFound, /name="robots" content="noindex, nofollow"/);
+  assert.doesNotMatch(notFound, /class="publication-list"/);
+  assert.match(robots, /User-agent: \*/);
+  assert.match(robots, /Sitemap: https:\/\/xiuling-wang\.pages\.dev\/sitemap\.xml/);
+  assert.match(sitemap, /<loc>https:\/\/xiuling-wang\.pages\.dev\/en\/<\/loc>/);
+  assert.equal(assets.some((name) => /\.(?:m?js|map)$/.test(name)), false);
 });

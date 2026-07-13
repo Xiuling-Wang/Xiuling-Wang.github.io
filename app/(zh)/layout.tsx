@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import "./globals.css";
+import "../globals.css";
 
 const siteUrl = new URL("https://xiuling-wang.pages.dev/");
 const title = "王秀玲 Xiuling Wang｜微生物生态研究者";
@@ -9,6 +9,8 @@ export const metadata: Metadata = {
   metadataBase: siteUrl,
   title,
   description,
+  authors: [{ name: "Xiuling Wang", url: "https://orcid.org/0000-0002-8006-7162" }],
+  creator: "Xiuling Wang",
   icons: { icon: "/favicon.svg" },
   alternates: {
     canonical: new URL("/", siteUrl),
@@ -34,7 +36,7 @@ export const metadata: Metadata = {
   },
 };
 
-export default function RootLayout({ children }: Readonly<{ children: React.ReactNode }>) {
+export default function ChineseLayout({ children }: Readonly<{ children: React.ReactNode }>) {
   return (
     <html lang="zh-CN">
       <body>{children}</body>

@@ -126,7 +126,7 @@ const researchAreas = [
 
 const publications = [
   {
-    yearZh: "返修中", yearEn: "IN REVISION", roleZh: "一作", roleEn: "FIRST AUTHOR", statusZh: "小修已返 · 待接收", statusEn: "MINOR REVISION RETURNED · AWAITING DECISION",
+    yearZh: "返修中", yearEn: "IN REVISION", roleZh: "一作", roleEn: "FIRST AUTHOR", statusZh: "小修已返 · 待决定", statusEn: "MINOR REVISION RETURNED · AWAITING DECISION",
     title: "Rhizosphere fungal communities of four Ferula species in their native habitats in northern Xinjiang",
     journal: "Rhizosphere", metricZh: "JCR 2025 · IF 3.9 · Q1", metricEn: "JCR 2025 · IF 3.9 · Q1", href: "https://www.sciencedirect.com/journal/rhizosphere",
   },
@@ -222,13 +222,17 @@ export default function AcademicHome({ locale }: { locale: Locale }) {
   const isZh = locale === "zh";
 
   return (
-    <main lang={isZh ? "zh-CN" : "en"} className={isZh ? "locale-zh" : "locale-en"}>
+    <div lang={isZh ? "zh-CN" : "en"} className={isZh ? "locale-zh" : "locale-en"}>
+      <a className="skip-link" href="#main-content">{isZh ? "跳到主要内容" : "Skip to main content"}</a>
       <header className="site-header">
         <div className="brand-zone">
-          <a className="qr-link" href="#site-qr-modal" aria-label={t.qr} title={t.qr}>
-            <img src="/site-qr.svg" alt="" />
+          <button className="qr-link qr-popover-trigger" type="button" popoverTarget="site-qr-popover" popoverTargetAction="show" aria-controls="site-qr-popover" aria-haspopup="dialog" aria-label={t.qr} title={t.qr}>
+            <img src="/site-qr.svg" alt="" width={56} height={56} />
+          </button>
+          <a className="qr-link qr-fallback-trigger" href="#site-qr-popover" aria-label={t.qr} title={t.qr}>
+            <img src="/site-qr.svg" alt="" width={56} height={56} />
           </a>
-          <a className="wordmark" href="#top" aria-label={t.top}>
+          <a className="wordmark" href="#top" aria-label={`Xiuling Wang — ${t.top}`}>
             <span>Xiuling Wang</span>
             <small>microbes · ecology · data</small>
           </a>
@@ -240,41 +244,43 @@ export default function AcademicHome({ locale }: { locale: Locale }) {
           <a href="#contact">{t.nav.contact}</a>
         </nav>
         <div className="header-actions">
-          <div className="language-switch" aria-label="Language">
-            <a className={isZh ? "active" : ""} href="/" lang="zh-CN">中文</a>
+          <div className="language-switch" role="group" aria-label="Language">
+            <a className={isZh ? "active" : ""} href="/" lang="zh-CN" aria-current={isZh ? "page" : undefined}>中文</a>
             <span>/</span>
-            <a className={!isZh ? "active" : ""} href="/en/" lang="en">EN</a>
+            <a className={!isZh ? "active" : ""} href="/en/" lang="en" aria-current={!isZh ? "page" : undefined}>EN</a>
           </div>
           <a className="nav-cta" href="mailto:wang.xiuling@outlook.com">{isZh ? "联系我" : "Contact"} <ArrowUpRight size={14} /></a>
         </div>
       </header>
 
-      <div className="qr-modal" id="site-qr-modal" role="dialog" aria-modal="true" aria-label={t.qr}>
-        <a className="qr-modal-backdrop" href="#top" aria-label={isZh ? "关闭二维码" : "Close QR code"} />
+      <div className="qr-modal" id="site-qr-popover" popover="auto" role="dialog" aria-label={t.qr}>
+        <a className="qr-fallback-backdrop" href="#top" aria-label={isZh ? "关闭二维码" : "Close QR code"} />
         <div className="qr-modal-card">
-          <a className="qr-modal-close" href="#top" aria-label={isZh ? "关闭二维码" : "Close QR code"}>×</a>
-          <img src="/site-qr.svg" alt={t.qr} />
+          <button className="qr-modal-close" type="button" popoverTarget="site-qr-popover" popoverTargetAction="hide" aria-label={isZh ? "关闭二维码" : "Close QR code"} autoFocus>×</button>
+          <a className="qr-fallback-close" href="#top" aria-label={isZh ? "关闭二维码" : "Close QR code"}>×</a>
+          <img src="/site-qr.svg" alt={t.qr} width={330} height={330} />
           <p>{isZh ? "手机扫描，打开个人主页" : "Scan with your phone to open the website"}</p>
           <a className="qr-direct-link" href={siteUrl}>{siteUrl.replace("https://", "")} <ArrowUpRight size={14} /></a>
         </div>
       </div>
 
-      <section className="hero" id="top">
-        <figure className="hero-photo">
-          <img src="/xiuling-mountains.jpg" alt={isZh ? "王秀玲在山间的照片" : "Xiuling Wang in the mountains"} />
-          <figcaption>{isZh ? "从野外样地到可复现的数据" : "from field sites to reproducible data"}</figcaption>
-        </figure>
-        <div className="hero-copy">
-          <p className="hero-kicker"><span /> {t.role}</p>
-          <h1>{t.hello}</h1>
-          <p className="hero-focus">{t.focus}</p>
-          <p className="hero-lead">{t.intro}</p>
-          <div className="hero-actions">
-            <a className="button primary" href="#publications">{t.explore} <ArrowDown size={15} /></a>
-            <a className="button secondary" href="https://orcid.org/0000-0002-8006-7162" target="_blank" rel="noreferrer">ORCID <ArrowUpRight size={15} /></a>
+      <main id="main-content" tabIndex={-1}>
+        <section className="hero" id="top">
+          <figure className="hero-photo">
+            <img src="/xiuling-mountains.webp" alt={isZh ? "王秀玲在山间的照片" : "Xiuling Wang in the mountains"} width={1350} height={1800} fetchPriority="high" decoding="async" />
+            <figcaption>{isZh ? "从野外样地到可复现的数据" : "from field sites to reproducible data"}</figcaption>
+          </figure>
+          <div className="hero-copy">
+            <p className="hero-kicker"><span /> {t.role}</p>
+            <h1>{t.hello}</h1>
+            <p className="hero-focus">{t.focus}</p>
+            <p className="hero-lead">{t.intro}</p>
+            <div className="hero-actions">
+              <a className="button primary" href="#publications">{t.explore} <ArrowDown size={15} /></a>
+              <a className="button secondary" href="https://orcid.org/0000-0002-8006-7162" target="_blank" rel="noopener noreferrer">ORCID <ArrowUpRight size={15} /></a>
+            </div>
           </div>
-        </div>
-      </section>
+        </section>
 
       <section className="profile section" id="profile">
         <div className="section-title"><span>01</span><h2>{t.profile}</h2></div>
@@ -314,7 +320,7 @@ export default function AcademicHome({ locale }: { locale: Locale }) {
             <h3>{t.projectTitle}</h3>
             <span>{t.projectText}</span>
             <div className="project-tags"><b>iDNA / eDNA</b><b>16S rRNA</b><b>0–200 cm</b><b>Germany–Chile</b></div>
-            <a href="https://www.gfz.de/en/press/news/details/earthshape-german-chilean-research-project-enters-second-phase" target="_blank" rel="noreferrer">{t.projectLink} <ExternalLink size={14} /></a>
+            <a href="https://www.gfz.de/en/press/news/details/earthshape-german-chilean-research-project-enters-second-phase" target="_blank" rel="noopener noreferrer">{t.projectLink} <ExternalLink size={14} /></a>
           </div>
           <div className="climate-visual" aria-hidden="true">
             <div className="climate-labels"><span>ARID</span><span>HUMID</span></div>
@@ -329,23 +335,25 @@ export default function AcademicHome({ locale }: { locale: Locale }) {
         <div className="section-heading publication-heading">
           <div className="section-title"><span>04</span><h2>{t.publications}</h2></div>
         </div>
-        <div className="publication-list" aria-label={isZh ? "学术成果列表" : "Publications and manuscripts"}>
+        <ol className="publication-list" aria-label={isZh ? "学术成果列表" : "Publications and manuscripts"}>
           {publications.map((publication, index) => (
-            <a href={publication.href} target="_blank" rel="noreferrer" key={publication.title}>
-              <span className="publication-count">{String(index + 1).padStart(2, "0")}</span>
-              <div className="publication-main">
-                <div className="publication-topline">
-                  <span>{isZh ? publication.yearZh : publication.yearEn}</span>
-                  <b>{isZh ? publication.roleZh : publication.roleEn}</b>
-                  {publication.statusZh && <em>{isZh ? publication.statusZh : publication.statusEn}</em>}
+            <li key={publication.title}>
+              <a href={publication.href} target="_blank" rel="noopener noreferrer">
+                <span className="publication-count">{String(index + 1).padStart(2, "0")}</span>
+                <div className="publication-main">
+                  <div className="publication-topline">
+                    <span>{isZh ? publication.yearZh : publication.yearEn}</span>
+                    <b>{isZh ? publication.roleZh : publication.roleEn}</b>
+                    {publication.statusZh && <em>{isZh ? publication.statusZh : publication.statusEn}</em>}
+                  </div>
+                  <h3>{publication.title}</h3>
+                  <div className="publication-details"><span>{publication.journal}</span><strong>{isZh ? publication.metricZh : publication.metricEn}</strong></div>
                 </div>
-                <h3>{publication.title}</h3>
-                <div className="publication-details"><span>{publication.journal}</span><strong>{isZh ? publication.metricZh : publication.metricEn}</strong></div>
-              </div>
-              <ArrowUpRight className="publication-arrow" size={20} aria-hidden="true" />
-            </a>
+                <ArrowUpRight className="publication-arrow" size={20} aria-hidden="true" />
+              </a>
+            </li>
           ))}
-        </div>
+        </ol>
       </section>
 
       <section className="background section" id="background">
@@ -382,16 +390,17 @@ export default function AcademicHome({ locale }: { locale: Locale }) {
         <div className="contact-row">
           <a className="contact-email" href="mailto:wang.xiuling@outlook.com">wang.xiuling@outlook.com <ArrowUpRight size={22} /></a>
           <div className="profile-links">
-            {profiles.map((profile) => <a href={profile.href} target="_blank" rel="noreferrer" key={profile.label}>{profile.label} <ArrowUpRight size={13} /></a>)}
+            {profiles.map((profile) => <a href={profile.href} target="_blank" rel="noopener noreferrer" key={profile.label}>{profile.label} <ArrowUpRight size={13} /></a>)}
           </div>
         </div>
       </section>
+      </main>
 
       <footer>
         <p>{t.rights}</p>
         <p>{t.updated}</p>
         <a href="#top">{t.top} ↑</a>
       </footer>
-    </main>
+    </div>
   );
 }

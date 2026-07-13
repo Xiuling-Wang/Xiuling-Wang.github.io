@@ -25,4 +25,4 @@ npm run export:github
 
 The production-ready static build is written to `docs/` and is deployed to both Cloudflare Pages and GitHub Pages. `dist/` is an intermediate vinext build directory.
 
-Content and migration notes are stored in [`content/site-maintenance.md`](content/site-maintenance.md). Runtime images, the QR code, and the social-sharing card are stored in `public/`.
+Content and migration notes are stored in [`content/site-maintenance.md`](content/site-maintenance.md). Runtime images, the QR code, crawl files, and the social-sharing card are stored in `public/`; the cleaned hero source is in `assets/source/`.

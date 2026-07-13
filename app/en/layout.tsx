@@ -1,13 +1,16 @@
 import type { Metadata } from "next";
+import "../globals.css";
 
 const siteUrl = new URL("https://xiuling-wang.pages.dev/");
 const title = "Xiuling Wang | Microbial Ecologist";
-const description = "Academic and career website of Xiuling Wang: microbial ecology, climate and depth gradients, iDNA/eDNA, rhizosphere and edible-fungi microbiomes, R, and AI-assisted research workflows.";
+const description = "Xiuling Wang’s academic website: microbial ecology, climate and depth gradients, iDNA/eDNA, rhizosphere and fungal microbiomes, R, statistics, and AI-assisted research workflows.";
 
 export const metadata: Metadata = {
   metadataBase: siteUrl,
   title,
   description,
+  authors: [{ name: "Xiuling Wang", url: "https://orcid.org/0000-0002-8006-7162" }],
+  creator: "Xiuling Wang",
   icons: { icon: "/favicon.svg" },
   alternates: {
     canonical: new URL("/en/", siteUrl),
@@ -34,5 +37,9 @@ export const metadata: Metadata = {
 };
 
 export default function EnglishLayout({ children }: Readonly<{ children: React.ReactNode }>) {
-  return children;
+  return (
+    <html lang="en">
+      <body>{children}</body>
+    </html>
+  );
 }
