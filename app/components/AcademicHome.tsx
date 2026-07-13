@@ -270,8 +270,8 @@ export default function AcademicHome({ locale }: { locale: Locale }) {
             <img src="/xiuling-mountains.webp" alt={isZh ? "王秀玲在山间的照片" : "Xiuling Wang in the mountains"} width={1350} height={1800} fetchPriority="high" decoding="async" />
           </figure>
           <div className="hero-copy">
-            <p className="hero-kicker"><span /> <span className="kicker-text">{t.role} <span className="hero-sprout" aria-hidden="true">🌱</span></span></p>
-            <h1>{t.hello}</h1>
+            <p className="hero-kicker"><span /> <span className="kicker-text">{t.role}</span></p>
+            <h1>{t.hello} <span className="hero-sprout" aria-hidden="true">🌱</span></h1>
             <p className="hero-focus">{t.focus}</p>
             <p className="hero-lead">{t.intro}</p>
             <div className="hero-actions">

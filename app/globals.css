@@ -84,14 +84,14 @@ nav a:hover::after, nav a:focus-visible::after { right: 0; }
 
 .hero { min-height: 760px; display: grid; grid-template-columns: minmax(430px, .92fr) minmax(0, 1.08fr); overflow: hidden; }
 .hero-photo { min-width: 0; min-height: 0; height: 760px; position: relative; margin: 0; overflow: hidden; }
-.hero-photo::after { content: ""; position: absolute; inset: 0; background: linear-gradient(90deg, transparent 72%, rgba(245,241,232,.24)), linear-gradient(to top, rgba(22,30,26,.20), transparent 28%); pointer-events: none; }
+.hero-photo::after { content: ""; position: absolute; inset: 0; background: linear-gradient(90deg, transparent 70%, rgba(245,241,232,.26)), linear-gradient(to top, rgba(18,26,22,.34), rgba(18,26,22,.09) 18%, transparent 36%); pointer-events: none; }
 .hero-photo > img { width: 100%; height: 100%; display: block; object-fit: cover; object-position: 52% 58%; }
 .hero-copy { align-self: center; max-width: 980px; padding: 92px clamp(28px, 7vw, 118px) 104px clamp(38px, 6vw, 100px); }
 .hero-kicker { display: flex; align-items: center; gap: 12px; margin: 0 0 28px; color: var(--blue); font-size: clamp(13px, 1.1vw, 17px); font-weight: 800; letter-spacing: .045em; }
 .hero-kicker > span:first-child { width: 11px; height: 11px; flex: 0 0 auto; border-radius: 50%; background: var(--orange-bright); box-shadow: 0 0 0 6px rgba(229,113,79,.14); }
-.hero-sprout, .contact-wave { display: inline-block; font-style: normal; font-size: 1.12em; line-height: 1; }
-.hero-sprout { transform-origin: 62% 92%; animation: sprout-sway 3.4s ease-in-out infinite; }
-.contact-wave { transform-origin: 72% 80%; animation: hand-wave 2.9s ease-in-out infinite; }
+.hero-sprout, .contact-wave { display: inline-block; font-style: normal; line-height: 1; }
+.hero-sprout { font-size: .6em; margin-left: .08em; vertical-align: -.02em; transform-origin: 60% 92%; animation: sprout-sway 3.4s ease-in-out infinite; }
+.contact-wave { font-size: 1.35em; margin-left: .12em; transform-origin: 72% 80%; animation: hand-wave 2.9s ease-in-out infinite; }
 @keyframes sprout-sway { 0%, 100% { transform: rotate(-7deg); } 50% { transform: rotate(7deg); } }
 @keyframes hand-wave { 0%, 60%, 100% { transform: rotate(0); } 15% { transform: rotate(15deg); } 30% { transform: rotate(-8deg); } 45% { transform: rotate(13deg); } }
 .hero h1 { margin: 0; font-size: clamp(52px, 4.8vw, 72px); font-weight: 700; line-height: 1; letter-spacing: -.05em; white-space: nowrap; }
