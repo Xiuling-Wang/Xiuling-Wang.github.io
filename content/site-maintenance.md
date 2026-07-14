@@ -30,7 +30,7 @@ SITE_URL=https://your-domain.example npm run qr
 ## Publication update rules
 
 1. Author role labels are deliberately compact:
-   - first and corresponding author: `一作` / `FIRST AUTHOR`
+   - first and corresponding author: `一作 & 通讯` / `FIRST & CORRESPONDING AUTHOR`
    - corresponding author but not first: `通讯` / `CORRESPONDING AUTHOR`
    - second author: `二作` / `SECOND AUTHOR`
    - all other positions: `co-author` / `CO-AUTHOR`
