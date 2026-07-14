@@ -131,6 +131,12 @@ const publications = [
     journal: "BMC Microbiology", metricZh: "JCR 2025 · IF 5.4 · Q1", metricEn: "JCR 2025 · IF 5.4 · Q1", href: "https://link.springer.com/journal/12866",
   },
   {
+    yearZh: "2026", yearEn: "2026", roleZh: "一作 & 通讯", roleEn: "FIRST & CORRESPONDING AUTHOR",
+    title: "Rhizosphere fungal communities of four Ferula species in their native habitats in northern Xinjiang",
+    authors: ["Xiuling Wang", "Gaodu Liang", "Li Zhuang"],
+    journal: "Rhizosphere · 101421 · DOI 10.1016/j.rhisph.2026.101421", metricZh: "JCR 2025 · IF 3.9 · Q1", metricEn: "JCR 2025 · IF 3.9 · Q1", href: "https://doi.org/10.1016/j.rhisph.2026.101421",
+  },
+  {
     yearZh: "2026", yearEn: "2026", roleZh: "通讯", roleEn: "CORRESPONDING AUTHOR",
     title: "Mechanical Damage Modulates Bacterial and Fungal Succession on the Surface of Hypsizygus marmoreus During Refrigerated Storage",
     journal: "Microorganisms · 14(4) · 762", metricZh: "JCR 2025 · IF 4.7 · Q2", metricEn: "JCR 2025 · IF 4.7 · Q2", href: "https://doi.org/10.3390/microorganisms14040762",
@@ -154,11 +160,6 @@ const publications = [
     yearZh: "2016", yearEn: "2016", roleZh: "二作", roleEn: "SECOND AUTHOR",
     title: "A unique mountainous vertical distribution patterns and related environmental interpretation – a case study on the northern slope of the Ili River Valley",
     journal: "Pakistan Journal of Botany · 48(5) · 1877–1886", metricZh: "JCR 2025 · IF 1.1 · Q3", metricEn: "JCR 2025 · IF 1.1 · Q3", href: "https://www.pakbs.org/pjbot/PDFs/48%285%29/14.pdf",
-  },
-  {
-    yearZh: "2026", yearEn: "2026", roleZh: "一作 & 通讯", roleEn: "FIRST & CORRESPONDING AUTHOR",
-    title: "Rhizosphere fungal communities of four Ferula species in their native habitats in northern Xinjiang",
-    journal: "Rhizosphere · 101421 · DOI 10.1016/j.rhisph.2026.101421", metricZh: "JCR 2025 · IF 3.9 · Q1", metricEn: "JCR 2025 · IF 3.9 · Q1", href: "https://doi.org/10.1016/j.rhisph.2026.101421",
   },
 ];
 
@@ -346,6 +347,13 @@ export default function AcademicHome({ locale }: { locale: Locale }) {
                     {publication.statusZh && <em>{isZh ? publication.statusZh : publication.statusEn}</em>}
                   </div>
                   <h3>{publication.title}</h3>
+                  {publication.authors && (
+                    <p className="publication-authors" aria-label={isZh ? "作者" : "Authors"}>
+                      {publication.authors.map((author, authorIndex) => (
+                        <span key={author}>{authorIndex > 0 && ", "}{author === "Xiuling Wang" ? <strong>{author}</strong> : author}</span>
+                      ))}
+                    </p>
+                  )}
                   <div className="publication-details"><span>{publication.journal}</span><strong>{isZh ? publication.metricZh : publication.metricEn}</strong></div>
                 </div>
                 <ArrowUpRight className="publication-arrow" size={20} aria-hidden="true" />

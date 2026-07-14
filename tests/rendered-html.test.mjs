@@ -37,7 +37,11 @@ test("renders the Chinese academic homepage with the requested publication label
   assert.doesNotMatch(html, /<em>已发表<\/em>/);
   assert.match(html, /https:\/\/doi\.org\/10\.1016\/j\.rhisph\.2026\.101421/);
   assert.match(html, /Rhizosphere · 101421 · DOI 10\.1016\/j\.rhisph\.2026\.101421/);
-  assert.ok(html.indexOf("Rhizosphere fungal communities") > html.indexOf("Pakistan Journal of Botany"));
+  assert.match(html, /class="publication-authors"[^>]*>.*?<strong>Xiuling Wang<\/strong>.*?Gaodu Liang.*?Li Zhuang.*?<\/p>/);
+  const bmcPosition = html.indexOf("Depth-dependent differences between direct total DNA");
+  const rhizospherePosition = html.indexOf("Rhizosphere fungal communities");
+  const microorganismsPosition = html.indexOf("Mechanical Damage Modulates");
+  assert.ok(bmcPosition < rhizospherePosition && rhizospherePosition < microorganismsPosition);
   assert.doesNotMatch(html, /小修已返 · 待决定|小修已返 · 待接收/);
   assert.doesNotMatch(html, /class="photo-note"/);
   assert.match(html, /popovertarget="site-qr-popover"/i);
@@ -57,6 +61,7 @@ test("renders a separate English route and local maintenance assets", async () =
   assert.doesNotMatch(html, /Hi, I’m Xiuling\./);
   assert.match(html, /CORRESPONDING AUTHOR/);
   assert.match(html, /FIRST &amp; CORRESPONDING AUTHOR/);
+  assert.match(html, /class="publication-authors"[^>]*>.*?<strong>Xiuling Wang<\/strong>.*?Gaodu Liang.*?Li Zhuang.*?<\/p>/);
   assert.match(html, /SECOND AUTHOR/);
   assert.match(html, /JCR 2025 · IF 3\.9 · Q1/);
   assert.doesNotMatch(html, /<em>PUBLISHED<\/em>/);

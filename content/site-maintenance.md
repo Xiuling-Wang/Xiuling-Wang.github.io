@@ -39,13 +39,15 @@ SITE_URL=https://your-domain.example npm run qr
 3. Science of the Total Environment keeps its 2024 publication-year metric: `JCR 2024 · IF 8.0 · Q1`.
 4. Update both Chinese and English status labels when a manuscript changes stage.
 5. Once a DOI and bibliographic metadata are officially assigned, replace the journal-home link and add only confirmed details. The published Rhizosphere article has DOI `10.1016/j.rhisph.2026.101421` and article number `101421`; volume and issue remain unlisted.
-6. The visible website update month is stored in both language blocks in `app/components/AcademicHome.tsx`.
+6. Keep the active manuscript first, then sort published papers in reverse chronological order. The 2026 Rhizosphere paper therefore appears second, ahead of the earlier 2026 publication.
+7. Add a verified author list when final metadata are available. For the Rhizosphere paper the DOI metadata order is `Xiuling Wang, Gaodu Liang, Li Zhuang`; highlight Xiuling Wang on the public card.
+8. The visible website update month is stored in both language blocks in `app/components/AcademicHome.tsx`.
 
 ## Manuscript evidence
 
 The public titles, author roles, and status snapshot are stored in `app/components/AcademicHome.tsx`. Source submissions and reviewer correspondence remain in private manuscript folders outside this public repository. Verify the latest private submission package before changing any title, role, journal, status, IF, quartile, or DOI.
 
-Current public status snapshot: the Rhizosphere article is published in 2026 with Xiuling Wang listed on the website as first and corresponding author, DOI `10.1016/j.rhisph.2026.101421`, and article number `101421`. It is presented with the other published papers rather than as an active manuscript. The BMC Microbiology major revision has been returned and is awaiting a decision.
+Current public status snapshot: the Rhizosphere article is published in 2026 with Xiuling Wang listed on the website as first and corresponding author, followed by Gaodu Liang and Li Zhuang in the verified author order. It has DOI `10.1016/j.rhisph.2026.101421` and article number `101421`, and appears second after the active BMC Microbiology manuscript. The BMC Microbiology major revision has been returned and is awaiting a decision.
 
 ## Profile link order
 

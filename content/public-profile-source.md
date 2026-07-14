@@ -22,7 +22,7 @@
 
 ## Current publication update
 
-- *Rhizosphere fungal communities of four Ferula species in their native habitats in northern Xinjiang* — first and corresponding author; published in *Rhizosphere* (2026), article 101421; DOI [10.1016/j.rhisph.2026.101421](https://doi.org/10.1016/j.rhisph.2026.101421)
+- Wang, Xiuling; Liang, Gaodu; Zhuang, Li. *Rhizosphere fungal communities of four Ferula species in their native habitats in northern Xinjiang* — Xiuling Wang: first and corresponding author; published in *Rhizosphere* (2026), article 101421; DOI [10.1016/j.rhisph.2026.101421](https://doi.org/10.1016/j.rhisph.2026.101421)
 
 ## Public researcher identifiers
 
