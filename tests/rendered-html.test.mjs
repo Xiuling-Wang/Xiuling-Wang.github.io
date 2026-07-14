@@ -38,6 +38,12 @@ test("renders the Chinese academic homepage with the requested publication label
   assert.match(html, /https:\/\/doi\.org\/10\.1016\/j\.rhisph\.2026\.101421/);
   assert.match(html, /Rhizosphere · 101421 · DOI 10\.1016\/j\.rhisph\.2026\.101421/);
   assert.match(html, /class="publication-authors"[^>]*>.*?<strong>Xiuling Wang<\/strong>.*?Gaodu Liang.*?Li Zhuang.*?<\/p>/);
+  assert.equal((html.match(/class="publication-authors"/g) ?? []).length, 7);
+  assert.equal((html.match(/<strong>(?:Xiuling Wang|Xiu-Ling Wang)<\/strong>/g) ?? []).length, 7);
+  assert.match(html, /Depth-dependent differences between direct total DNA.*?class="publication-authors"[^>]*>.*?Chenyi Mao.*?<strong>Xiuling Wang<\/strong>.*?<\/p>/);
+  assert.match(html, /Mechanical Damage Modulates.*?class="publication-authors"[^>]*>.*?Jingming Ma.*?Mingzheng Zhang.*?Qian Liu.*?<strong>Xiuling Wang<\/strong>.*?<\/p>/);
+  assert.match(html, /Pakistan Journal of Botany|Zhong-Ping Tian/);
+  assert.match(html, /Zhong-Ping Tian.*?<strong>Xiu-Ling Wang<\/strong>.*?Xiao-Yi Zhao.*?Li Zhuang/);
   const bmcPosition = html.indexOf("Depth-dependent differences between direct total DNA");
   const rhizospherePosition = html.indexOf("Rhizosphere fungal communities");
   const microorganismsPosition = html.indexOf("Mechanical Damage Modulates");
@@ -62,6 +68,8 @@ test("renders a separate English route and local maintenance assets", async () =
   assert.match(html, /CORRESPONDING AUTHOR/);
   assert.match(html, /FIRST &amp; CORRESPONDING AUTHOR/);
   assert.match(html, /class="publication-authors"[^>]*>.*?<strong>Xiuling Wang<\/strong>.*?Gaodu Liang.*?Li Zhuang.*?<\/p>/);
+  assert.equal((html.match(/class="publication-authors"/g) ?? []).length, 7);
+  assert.equal((html.match(/<strong>(?:Xiuling Wang|Xiu-Ling Wang)<\/strong>/g) ?? []).length, 7);
   assert.match(html, /SECOND AUTHOR/);
   assert.match(html, /JCR 2025 · IF 3\.9 · Q1/);
   assert.doesNotMatch(html, /<em>PUBLISHED<\/em>/);

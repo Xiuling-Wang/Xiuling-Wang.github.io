@@ -128,6 +128,7 @@ const publications = [
   {
     yearZh: "审稿中", yearEn: "IN REVIEW", roleZh: "通讯", roleEn: "CORRESPONDING AUTHOR", statusZh: "大修已返 · 待决定", statusEn: "MAJOR REVISION RETURNED · AWAITING DECISION",
     title: "Depth-dependent differences between direct total DNA and an intracellular-DNA-enriched fraction in bulk-soil bacterial and fungal communities of a Lonicera japonica field",
+    authors: ["Chenyi Mao", "Xiuling Wang"],
     journal: "BMC Microbiology", metricZh: "JCR 2025 · IF 5.4 · Q1", metricEn: "JCR 2025 · IF 5.4 · Q1", href: "https://link.springer.com/journal/12866",
   },
   {
@@ -139,26 +140,31 @@ const publications = [
   {
     yearZh: "2026", yearEn: "2026", roleZh: "通讯", roleEn: "CORRESPONDING AUTHOR",
     title: "Mechanical Damage Modulates Bacterial and Fungal Succession on the Surface of Hypsizygus marmoreus During Refrigerated Storage",
+    authors: ["Jingming Ma", "Mingzheng Zhang", "Qian Liu", "Xiuling Wang"],
     journal: "Microorganisms · 14(4) · 762", metricZh: "JCR 2025 · IF 4.7 · Q2", metricEn: "JCR 2025 · IF 4.7 · Q2", href: "https://doi.org/10.3390/microorganisms14040762",
   },
   {
     yearZh: "2024", yearEn: "2024", roleZh: "一作", roleEn: "FIRST AUTHOR",
     title: "The effects of climate and soil depth on living and dead bacterial communities along a longitudinal gradient in Chile",
+    authors: ["Xiuling Wang", "Lars Ganzert", "Alexander Bartholomäus", "Rahma Amen", "Sizhong Yang", "Carolina Merino Guzmán", "Francisco Matus", "Maria Fernanda Albornoz", "Felipe Aburto", "Rómulo Oses-Pedraza", "Thomas Friedl", "Dirk Wagner"],
     journal: "Science of the Total Environment · 945 · 173846", metricZh: "JCR 2024（发表年度）· IF 8.0 · Q1", metricEn: "JCR 2024 (PUBLICATION YEAR) · IF 8.0 · Q1", href: "https://doi.org/10.1016/j.scitotenv.2024.173846",
   },
   {
     yearZh: "2019", yearEn: "2019", roleZh: "一作", roleEn: "FIRST AUTHOR",
     title: "Low Temperature (15 °C) Reduces Bacterial Diversity and Prolongs the Preservation Time of Volvariella volvacea",
+    authors: ["Xiuling Wang", "Shunjie Liu", "Mingjie Chen", "Changxia Yu", "Yan Zhao", "Huanling Yang", "Lei Zha", "Zhengpeng Li"],
     journal: "Microorganisms · 7(10) · 475", metricZh: "JCR 2025 · IF 4.7 · Q2", metricEn: "JCR 2025 · IF 4.7 · Q2", href: "https://doi.org/10.3390/microorganisms7100475",
   },
   {
     yearZh: "2018", yearEn: "2018", roleZh: "一作", roleEn: "FIRST AUTHOR",
     title: "Bacterial diversity and community structure in the rhizosphere of four Ferula species",
+    authors: ["Xiuling Wang", "Zhongke Wang", "Ping Jiang", "Yaling He", "Yudi Mu", "Xinhua Lv", "Li Zhuang"],
     journal: "Scientific Reports · 8 · 5345", metricZh: "JCR 2025 · IF 4.9 · Q1", metricEn: "JCR 2025 · IF 4.9 · Q1", href: "https://doi.org/10.1038/s41598-018-22802-y",
   },
   {
     yearZh: "2016", yearEn: "2016", roleZh: "二作", roleEn: "SECOND AUTHOR",
     title: "A unique mountainous vertical distribution patterns and related environmental interpretation – a case study on the northern slope of the Ili River Valley",
+    authors: ["Zhong-Ping Tian", "Xiu-Ling Wang", "Xiao-Yi Zhao", "Li Zhuang"],
     journal: "Pakistan Journal of Botany · 48(5) · 1877–1886", metricZh: "JCR 2025 · IF 1.1 · Q3", metricEn: "JCR 2025 · IF 1.1 · Q3", href: "https://www.pakbs.org/pjbot/PDFs/48%285%29/14.pdf",
   },
 ];
@@ -347,13 +353,11 @@ export default function AcademicHome({ locale }: { locale: Locale }) {
                     {publication.statusZh && <em>{isZh ? publication.statusZh : publication.statusEn}</em>}
                   </div>
                   <h3>{publication.title}</h3>
-                  {publication.authors && (
-                    <p className="publication-authors" aria-label={isZh ? "作者" : "Authors"}>
-                      {publication.authors.map((author, authorIndex) => (
-                        <span key={author}>{authorIndex > 0 && ", "}{author === "Xiuling Wang" ? <strong>{author}</strong> : author}</span>
-                      ))}
-                    </p>
-                  )}
+                  <p className="publication-authors" aria-label={isZh ? "作者" : "Authors"}>
+                    {publication.authors.map((author, authorIndex) => (
+                      <span key={author}>{authorIndex > 0 && ", "}{author === "Xiuling Wang" || author === "Xiu-Ling Wang" ? <strong>{author}</strong> : author}</span>
+                    ))}
+                  </p>
                   <div className="publication-details"><span>{publication.journal}</span><strong>{isZh ? publication.metricZh : publication.metricEn}</strong></div>
                 </div>
                 <ArrowUpRight className="publication-arrow" size={20} aria-hidden="true" />
