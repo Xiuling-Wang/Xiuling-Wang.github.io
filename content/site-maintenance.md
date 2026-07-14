@@ -38,14 +38,14 @@ SITE_URL=https://your-domain.example npm run qr
    - Rhizosphere: `JCR 2025 · IF 3.9 · Q1` (2025 JCR, released by Clarivate in June 2026; the preceding 2024 IF was 3.5).
 3. Science of the Total Environment keeps its 2024 publication-year metric: `JCR 2024 · IF 8.0 · Q1`.
 4. Update both Chinese and English status labels when a manuscript changes stage.
-5. Once a DOI and bibliographic metadata are officially assigned, replace the journal-home link and add only confirmed details. Rhizosphere currently has DOI `10.1016/j.rhisph.2026.101421` and article number `101421`; volume and issue remain unlisted.
+5. Once a DOI and bibliographic metadata are officially assigned, replace the journal-home link and add only confirmed details. The published Rhizosphere article has DOI `10.1016/j.rhisph.2026.101421` and article number `101421`; volume and issue remain unlisted.
 6. The visible website update month is stored in both language blocks in `app/components/AcademicHome.tsx`.
 
 ## Manuscript evidence
 
 The public titles, author roles, and status snapshot are stored in `app/components/AcademicHome.tsx`. Source submissions and reviewer correspondence remain in private manuscript folders outside this public repository. Verify the latest private submission package before changing any title, role, journal, status, IF, quartile, or DOI.
 
-Current public status snapshot: the Rhizosphere manuscript has been accepted, transferred to production, and assigned DOI `10.1016/j.rhisph.2026.101421` and article number `101421`; the site should not label it published until the final online publication record is confirmed. The BMC Microbiology major revision has been returned and is awaiting a decision.
+Current public status snapshot: the Rhizosphere article is published in 2026 with DOI `10.1016/j.rhisph.2026.101421` and article number `101421`. The BMC Microbiology major revision has been returned and is awaiting a decision.
 
 ## Profile link order
 

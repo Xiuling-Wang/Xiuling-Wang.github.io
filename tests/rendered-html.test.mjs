@@ -33,7 +33,7 @@ test("renders the Chinese academic homepage with the requested publication label
   assert.doesNotMatch(html, /JIF|LAST AUTHOR|CO-CORRESPONDING|共同通讯|WHAT&#x27;S NEXT/);
   assert.doesNotMatch(html, /论文与在审稿件按当前状态列出/);
   assert.match(html, /真菌与跨环境微生物组/);
-  assert.match(html, /已接收 · DOI 已分配/);
+  assert.match(html, /<em>已发表<\/em>/);
   assert.match(html, /https:\/\/doi\.org\/10\.1016\/j\.rhisph\.2026\.101421/);
   assert.match(html, /Rhizosphere · 101421 · DOI 10\.1016\/j\.rhisph\.2026\.101421/);
   assert.doesNotMatch(html, /小修已返 · 待决定|小修已返 · 待接收/);
@@ -56,7 +56,7 @@ test("renders a separate English route and local maintenance assets", async () =
   assert.match(html, /CORRESPONDING AUTHOR/);
   assert.match(html, /SECOND AUTHOR/);
   assert.match(html, /JCR 2025 · IF 3\.9 · Q1/);
-  assert.match(html, /ACCEPTED · DOI ASSIGNED/);
+  assert.match(html, /<em>PUBLISHED<\/em>/);
   assert.match(html, /Climate · depth · host microbiomes/);
   assert.match(html, /Statistics &amp; microbiome data.*R &amp; reproducible computation.*Microbial ecology laboratory work.*Computational workflows &amp; AI-assisted research/s);
   assert.doesNotMatch(html, /MINOR REVISION RETURNED · AWAITING DECISION/);

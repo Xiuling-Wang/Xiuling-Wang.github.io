@@ -126,7 +126,7 @@ const researchAreas = [
 
 const publications = [
   {
-    yearZh: "2026", yearEn: "2026", roleZh: "一作", roleEn: "FIRST AUTHOR", statusZh: "已接收 · DOI 已分配", statusEn: "ACCEPTED · DOI ASSIGNED",
+    yearZh: "2026", yearEn: "2026", roleZh: "一作", roleEn: "FIRST AUTHOR", statusZh: "已发表", statusEn: "PUBLISHED",
     title: "Rhizosphere fungal communities of four Ferula species in their native habitats in northern Xinjiang",
     journal: "Rhizosphere · 101421 · DOI 10.1016/j.rhisph.2026.101421", metricZh: "JCR 2025 · IF 3.9 · Q1", metricEn: "JCR 2025 · IF 3.9 · Q1", href: "https://doi.org/10.1016/j.rhisph.2026.101421",
   },
