@@ -22,7 +22,8 @@ test("renders the Chinese academic homepage with the requested publication label
   assert.match(html, /<html lang="zh-CN">/);
   assert.match(html, /Hi，我是秀玲/);
   assert.doesNotMatch(html, /我是秀玲。/);
-  assert.match(html, /AI 智能体与研究工作流/);
+  assert.match(html, /气候 · 深度 · 宿主微生物组/);
+  assert.match(html, /计算工作流与 AI 辅助研究/);
   assert.match(html, /约 5 年 R 使用经验/);
   assert.match(html, /<b>一作<\/b>/);
   assert.match(html, /<b>通讯<\/b>/);
@@ -32,7 +33,9 @@ test("renders the Chinese academic homepage with the requested publication label
   assert.doesNotMatch(html, /JIF|LAST AUTHOR|CO-CORRESPONDING|共同通讯|WHAT&#x27;S NEXT/);
   assert.doesNotMatch(html, /论文与在审稿件按当前状态列出/);
   assert.match(html, /真菌与跨环境微生物组/);
-  assert.match(html, /已接收 · 制作中/);
+  assert.match(html, /已接收 · DOI 已分配/);
+  assert.match(html, /https:\/\/doi\.org\/10\.1016\/j\.rhisph\.2026\.101421/);
+  assert.match(html, /Rhizosphere · 101421 · DOI 10\.1016\/j\.rhisph\.2026\.101421/);
   assert.doesNotMatch(html, /小修已返 · 待决定|小修已返 · 待接收/);
   assert.doesNotMatch(html, /class="photo-note"/);
   assert.match(html, /popovertarget="site-qr-popover"/i);
@@ -50,12 +53,12 @@ test("renders a separate English route and local maintenance assets", async () =
   assert.match(html, /<html lang="en">/);
   assert.match(html, /Hi, I’m Xiuling/);
   assert.doesNotMatch(html, /Hi, I’m Xiuling\./);
-  assert.match(html, /I work at the intersection of microbial ecology and data/);
-  assert.match(html, /AI agents &amp; research workflows/);
   assert.match(html, /CORRESPONDING AUTHOR/);
   assert.match(html, /SECOND AUTHOR/);
   assert.match(html, /JCR 2025 · IF 3\.9 · Q1/);
-  assert.match(html, /ACCEPTED · IN PRODUCTION/);
+  assert.match(html, /ACCEPTED · DOI ASSIGNED/);
+  assert.match(html, /Climate · depth · host microbiomes/);
+  assert.match(html, /Statistics &amp; microbiome data.*R &amp; reproducible computation.*Microbial ecology laboratory work.*Computational workflows &amp; AI-assisted research/s);
   assert.doesNotMatch(html, /MINOR REVISION RETURNED · AWAITING DECISION/);
   assert.match(html, /<a[^>]*href="\/"[^>]*lang="zh-CN"[^>]*>中文<\/a>/);
   assert.match(html, /MAJOR REVISION RETURNED · AWAITING DECISION/);

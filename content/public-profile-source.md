@@ -2,7 +2,7 @@
 
 ## Positioning
 
-- Microbial ecologist with strong soil, rhizosphere, fungal, and food-microbiology experience
+- Microbial ecologist studying how environmental gradients, soil depth, and host-associated environments shape microbial communities
 - Open to research, microbiome data analysis, and AI-enabled research workflow opportunities
 - Website is designed for current job applications and future lab, student recruitment, and career-record use
 
@@ -15,11 +15,14 @@
 
 ## Technical profile
 
-- Around five years of R experience, beginning around 2021
-- Advanced Codex user; experienced with Claude Code and ChatGPT
-- AI-agent task decomposition, workflow orchestration, prompt design, verification, and reproducibility
 - SPSS, microbial community and network analysis, multivariate statistics, and scientific visualisation
+- Around five years of R experience, beginning around 2021
 - Low-biomass soil DNA extraction, PCR, qPCR, library preparation, microbial isolation, 16S, ITS, and metagenomics
+- Advanced Codex user; experienced with Claude Code and ChatGPT for AI-assisted research automation, verification, and reproducible workflows
+
+## Current publication update
+
+- *Rhizosphere fungal communities of four Ferula species in their native habitats in northern Xinjiang* — accepted; DOI [10.1016/j.rhisph.2026.101421](https://doi.org/10.1016/j.rhisph.2026.101421); article number 101421
 
 ## Public researcher identifiers
 

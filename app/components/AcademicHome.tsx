@@ -23,8 +23,8 @@ const copy = {
     qr: "扫描二维码打开网站",
     role: "Microbial Ecologist · Open to New Opportunities",
     hello: "Hi，我是秀玲",
-    focus: "我在微生物生态和数据之间工作。",
-    intro: "研究气候、深度、宿主与环境如何塑造细菌和真菌群落，并把实验、统计与可复现的数据分析连接成完整的研究流程。",
+    focus: "气候 · 深度 · 宿主微生物组",
+    intro: "结合野外生态、分子方法、统计建模与可复现计算分析，理解细菌和真菌群落如何组装、变化并发挥作用。",
     explore: "查看研究成果",
     profile: "简介",
     profileText: [
@@ -48,7 +48,7 @@ const copy = {
     education: "教育经历",
     experience: "研究经历",
     skills: "技能",
-    skillsIntro: "实验、数据与 AI 智能体协同的研究工作流。",
+    skillsIntro: "微生物组分析、统计建模、实验方法与 AI 辅助的可复现研究流程。",
     contact: "合作与联系",
     contactText: "欢迎就研究合作、数据分析岗位、联合项目及未来学生机会联系。",
     updated: "网站更新：2026.07",
@@ -60,8 +60,8 @@ const copy = {
     qr: "Scan to open this website",
     role: "Microbial Ecologist · Open to New Opportunities",
     hello: "Hi, I’m Xiuling",
-    focus: "I work at the intersection of microbial ecology and data.",
-    intro: "I study how climate, depth, hosts, and environments shape bacterial and fungal communities, connecting experiments, statistics, and reproducible data analysis into complete research workflows.",
+    focus: "Climate · depth · host microbiomes",
+    intro: "I integrate field ecology, molecular approaches, statistical modelling, and reproducible computation to understand how bacterial and fungal communities assemble, change, and function.",
     explore: "Explore my research",
     profile: "Profile",
     profileText: [
@@ -85,7 +85,7 @@ const copy = {
     education: "Education",
     experience: "Research Experience",
     skills: "Skills",
-    skillsIntro: "Research workflows integrating laboratory work, data, and AI agents.",
+    skillsIntro: "Microbiome analysis, statistical modelling, laboratory methods, and reproducible workflows accelerated by AI.",
     contact: "Contact & Collaboration",
     contactText: "I welcome conversations about research collaborations, data-focused roles, joint projects, and future student opportunities.",
     updated: "Website updated: 2026.07",
@@ -126,9 +126,9 @@ const researchAreas = [
 
 const publications = [
   {
-    yearZh: "2026", yearEn: "2026", roleZh: "一作", roleEn: "FIRST AUTHOR", statusZh: "已接收 · 制作中", statusEn: "ACCEPTED · IN PRODUCTION",
+    yearZh: "2026", yearEn: "2026", roleZh: "一作", roleEn: "FIRST AUTHOR", statusZh: "已接收 · DOI 已分配", statusEn: "ACCEPTED · DOI ASSIGNED",
     title: "Rhizosphere fungal communities of four Ferula species in their native habitats in northern Xinjiang",
-    journal: "Rhizosphere", metricZh: "JCR 2025 · IF 3.9 · Q1", metricEn: "JCR 2025 · IF 3.9 · Q1", href: "https://www.sciencedirect.com/journal/rhizosphere",
+    journal: "Rhizosphere · 101421 · DOI 10.1016/j.rhisph.2026.101421", metricZh: "JCR 2025 · IF 3.9 · Q1", metricEn: "JCR 2025 · IF 3.9 · Q1", href: "https://doi.org/10.1016/j.rhisph.2026.101421",
   },
   {
     yearZh: "审稿中", yearEn: "IN REVIEW", roleZh: "通讯", roleEn: "CORRESPONDING AUTHOR", statusZh: "大修已返 · 待决定", statusEn: "MAJOR REVISION RETURNED · AWAITING DECISION",
@@ -164,22 +164,6 @@ const publications = [
 
 const skills = [
   {
-    icon: Bot,
-    zhTitle: "AI 智能体与研究工作流",
-    enTitle: "AI agents & research workflows",
-    zhText: "Codex 资深用户，熟练使用 Claude Code 与 ChatGPT；擅长复杂任务拆解、智能体协作、提示设计、结果校验和长流程维护。",
-    enText: "Advanced Codex user with extensive experience in Claude Code and ChatGPT; skilled in task decomposition, agent collaboration, prompting, output validation, and long-running workflows.",
-    tags: ["Codex", "Claude Code", "ChatGPT", "Agent workflows"],
-  },
-  {
-    icon: Code2,
-    zhTitle: "R 语言与 AI 辅助编程",
-    enTitle: "R & AI-assisted programming",
-    zhText: "约 5 年 R 使用经验（2021–至今），覆盖数据整理、统计建模、微生物群落分析和可视化；目前主要采用 AI 协作开发，同时保留方法判断、调试与复现能力。",
-    enText: "Around five years of R experience (2021–present) across data wrangling, statistical modelling, microbial community analysis, and visualisation. I now work primarily through AI-assisted development while retaining methodological judgement, debugging, and reproducibility skills.",
-    tags: ["R", "tidyverse", "ggplot2", "Reproducible analysis"],
-  },
-  {
     icon: BarChart3,
     zhTitle: "统计与微生物组数据分析",
     enTitle: "Statistics & microbiome data",
@@ -188,12 +172,28 @@ const skills = [
     tags: ["SPSS", "Community analysis", "Networks", "Visualisation"],
   },
   {
+    icon: Code2,
+    zhTitle: "R 语言与可复现计算分析",
+    enTitle: "R & reproducible computation",
+    zhText: "约 5 年 R 使用经验（2021–至今），覆盖数据整理、统计建模、微生物群落分析和可视化；目前主要采用 AI 协作开发，同时保留方法判断、调试与复现能力。",
+    enText: "Around five years of R experience (2021–present) across data wrangling, statistical modelling, microbial community analysis, and visualisation. I now work primarily through AI-assisted development while retaining methodological judgement, debugging, and reproducibility skills.",
+    tags: ["R", "tidyverse", "ggplot2", "Reproducible analysis"],
+  },
+  {
     icon: Microscope,
     zhTitle: "微生物生态实验",
     enTitle: "Microbial ecology laboratory work",
     zhText: "低生物量土壤 DNA 提取、PCR、qPCR、文库准备、微生物分离培养，以及 16S、ITS 与宏基因组研究流程。",
     enText: "Low-biomass soil DNA extraction, PCR, qPCR, library preparation, microbial isolation and cultivation, and 16S, ITS, and metagenomic workflows.",
     tags: ["16S", "ITS", "Metagenomics", "qPCR"],
+  },
+  {
+    icon: Bot,
+    zhTitle: "计算工作流与 AI 辅助研究",
+    enTitle: "Computational workflows & AI-assisted research",
+    zhText: "Codex 资深用户，熟练使用 Claude Code 与 ChatGPT；擅长复杂任务拆解、智能体协作、提示设计、结果校验和长流程维护。",
+    enText: "Advanced Codex user with extensive experience in Claude Code and ChatGPT; skilled in task decomposition, agent collaboration, prompting, output validation, and long-running workflows.",
+    tags: ["Codex", "Claude Code", "ChatGPT", "Agent workflows"],
   },
 ];
 
