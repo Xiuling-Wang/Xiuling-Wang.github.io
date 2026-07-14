@@ -33,9 +33,11 @@ test("renders the Chinese academic homepage with the requested publication label
   assert.doesNotMatch(html, /JIF|LAST AUTHOR|CO-CORRESPONDING|共同通讯|WHAT&#x27;S NEXT/);
   assert.doesNotMatch(html, /论文与在审稿件按当前状态列出/);
   assert.match(html, /真菌与跨环境微生物组/);
-  assert.match(html, /<em>已发表<\/em>/);
+  assert.match(html, /<b>一作 &amp; 通讯<\/b>/);
+  assert.doesNotMatch(html, /<em>已发表<\/em>/);
   assert.match(html, /https:\/\/doi\.org\/10\.1016\/j\.rhisph\.2026\.101421/);
   assert.match(html, /Rhizosphere · 101421 · DOI 10\.1016\/j\.rhisph\.2026\.101421/);
+  assert.ok(html.indexOf("Rhizosphere fungal communities") > html.indexOf("Pakistan Journal of Botany"));
   assert.doesNotMatch(html, /小修已返 · 待决定|小修已返 · 待接收/);
   assert.doesNotMatch(html, /class="photo-note"/);
   assert.match(html, /popovertarget="site-qr-popover"/i);
@@ -54,9 +56,10 @@ test("renders a separate English route and local maintenance assets", async () =
   assert.match(html, /Hi, I’m Xiuling/);
   assert.doesNotMatch(html, /Hi, I’m Xiuling\./);
   assert.match(html, /CORRESPONDING AUTHOR/);
+  assert.match(html, /FIRST &amp; CORRESPONDING AUTHOR/);
   assert.match(html, /SECOND AUTHOR/);
   assert.match(html, /JCR 2025 · IF 3\.9 · Q1/);
-  assert.match(html, /<em>PUBLISHED<\/em>/);
+  assert.doesNotMatch(html, /<em>PUBLISHED<\/em>/);
   assert.match(html, /Climate · depth · host microbiomes/);
   assert.match(html, /Statistics &amp; microbiome data.*R &amp; reproducible computation.*Microbial ecology laboratory work.*Computational workflows &amp; AI-assisted research/s);
   assert.doesNotMatch(html, /MINOR REVISION RETURNED · AWAITING DECISION/);

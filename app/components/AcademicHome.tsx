@@ -126,11 +126,6 @@ const researchAreas = [
 
 const publications = [
   {
-    yearZh: "2026", yearEn: "2026", roleZh: "一作", roleEn: "FIRST AUTHOR", statusZh: "已发表", statusEn: "PUBLISHED",
-    title: "Rhizosphere fungal communities of four Ferula species in their native habitats in northern Xinjiang",
-    journal: "Rhizosphere · 101421 · DOI 10.1016/j.rhisph.2026.101421", metricZh: "JCR 2025 · IF 3.9 · Q1", metricEn: "JCR 2025 · IF 3.9 · Q1", href: "https://doi.org/10.1016/j.rhisph.2026.101421",
-  },
-  {
     yearZh: "审稿中", yearEn: "IN REVIEW", roleZh: "通讯", roleEn: "CORRESPONDING AUTHOR", statusZh: "大修已返 · 待决定", statusEn: "MAJOR REVISION RETURNED · AWAITING DECISION",
     title: "Depth-dependent differences between direct total DNA and an intracellular-DNA-enriched fraction in bulk-soil bacterial and fungal communities of a Lonicera japonica field",
     journal: "BMC Microbiology", metricZh: "JCR 2025 · IF 5.4 · Q1", metricEn: "JCR 2025 · IF 5.4 · Q1", href: "https://link.springer.com/journal/12866",
@@ -159,6 +154,11 @@ const publications = [
     yearZh: "2016", yearEn: "2016", roleZh: "二作", roleEn: "SECOND AUTHOR",
     title: "A unique mountainous vertical distribution patterns and related environmental interpretation – a case study on the northern slope of the Ili River Valley",
     journal: "Pakistan Journal of Botany · 48(5) · 1877–1886", metricZh: "JCR 2025 · IF 1.1 · Q3", metricEn: "JCR 2025 · IF 1.1 · Q3", href: "https://www.pakbs.org/pjbot/PDFs/48%285%29/14.pdf",
+  },
+  {
+    yearZh: "2026", yearEn: "2026", roleZh: "一作 & 通讯", roleEn: "FIRST & CORRESPONDING AUTHOR",
+    title: "Rhizosphere fungal communities of four Ferula species in their native habitats in northern Xinjiang",
+    journal: "Rhizosphere · 101421 · DOI 10.1016/j.rhisph.2026.101421", metricZh: "JCR 2025 · IF 3.9 · Q1", metricEn: "JCR 2025 · IF 3.9 · Q1", href: "https://doi.org/10.1016/j.rhisph.2026.101421",
   },
 ];
 
@@ -336,7 +336,7 @@ export default function AcademicHome({ locale }: { locale: Locale }) {
         </div>
         <ol className="publication-list" aria-label={isZh ? "学术成果列表" : "Publications and manuscripts"}>
           {publications.map((publication, index) => (
-            <li key={publication.title}>
+            <li key={publication.title} className={publication.statusZh ? "publication-manuscript" : undefined}>
               <a href={publication.href} target="_blank" rel="noopener noreferrer">
                 <span className="publication-count">{String(index + 1).padStart(2, "0")}</span>
                 <div className="publication-main">

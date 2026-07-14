@@ -45,7 +45,7 @@ SITE_URL=https://your-domain.example npm run qr
 
 The public titles, author roles, and status snapshot are stored in `app/components/AcademicHome.tsx`. Source submissions and reviewer correspondence remain in private manuscript folders outside this public repository. Verify the latest private submission package before changing any title, role, journal, status, IF, quartile, or DOI.
 
-Current public status snapshot: the Rhizosphere article is published in 2026 with DOI `10.1016/j.rhisph.2026.101421` and article number `101421`. The BMC Microbiology major revision has been returned and is awaiting a decision.
+Current public status snapshot: the Rhizosphere article is published in 2026 with Xiuling Wang listed on the website as first and corresponding author, DOI `10.1016/j.rhisph.2026.101421`, and article number `101421`. It is presented with the other published papers rather than as an active manuscript. The BMC Microbiology major revision has been returned and is awaiting a decision.
 
 ## Profile link order
 
