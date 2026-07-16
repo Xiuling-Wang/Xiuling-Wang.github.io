@@ -35,8 +35,9 @@ test("renders the Chinese academic homepage with the requested publication label
   assert.match(html, /真菌与跨环境微生物组/);
   assert.match(html, /<b>一作 &amp; 通讯<\/b>/);
   assert.doesNotMatch(html, /<em>已发表<\/em>/);
-  assert.match(html, /https:\/\/doi\.org\/10\.1016\/j\.rhisph\.2026\.101421/);
-  assert.match(html, /Rhizosphere · 101421 · DOI 10\.1016\/j\.rhisph\.2026\.101421/);
+  assert.match(html, /href="https:\/\/authors\.elsevier\.com\/a\/1nS2y8jaVhezS3"/);
+  assert.match(html, /Rhizosphere · 39 · 101421/);
+  assert.doesNotMatch(html, /Rhizosphere · 101421 · DOI/);
   assert.match(html, /class="publication-authors"[^>]*>.*?<strong>Xiuling Wang<\/strong>.*?Gaodu Liang.*?Li Zhuang.*?<\/p>/);
   assert.equal((html.match(/class="publication-authors"/g) ?? []).length, 7);
   assert.equal((html.match(/<strong>(?:Xiuling Wang|Xiu-Ling Wang)<\/strong>/g) ?? []).length, 7);
@@ -73,6 +74,8 @@ test("renders a separate English route and local maintenance assets", async () =
   assert.match(html, /SECOND AUTHOR/);
   assert.match(html, /JCR 2025 · IF 3\.9 · Q1/);
   assert.doesNotMatch(html, /<em>PUBLISHED<\/em>/);
+  assert.match(html, /href="https:\/\/authors\.elsevier\.com\/a\/1nS2y8jaVhezS3"/);
+  assert.match(html, /Rhizosphere · 39 · 101421/);
   assert.match(html, /Climate · depth · host microbiomes/);
   assert.match(html, /Statistics &amp; microbiome data.*R &amp; reproducible computation.*Microbial ecology laboratory work.*Computational workflows &amp; AI-assisted research/s);
   assert.doesNotMatch(html, /MINOR REVISION RETURNED · AWAITING DECISION/);

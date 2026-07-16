@@ -135,7 +135,7 @@ const publications = [
     yearZh: "2026", yearEn: "2026", roleZh: "一作 & 通讯", roleEn: "FIRST & CORRESPONDING AUTHOR",
     title: "Rhizosphere fungal communities of four Ferula species in their native habitats in northern Xinjiang",
     authors: ["Xiuling Wang", "Gaodu Liang", "Li Zhuang"],
-    journal: "Rhizosphere · 101421 · DOI 10.1016/j.rhisph.2026.101421", metricZh: "JCR 2025 · IF 3.9 · Q1", metricEn: "JCR 2025 · IF 3.9 · Q1", href: "https://doi.org/10.1016/j.rhisph.2026.101421",
+    journal: "Rhizosphere · 39 · 101421", metricZh: "JCR 2025 · IF 3.9 · Q1", metricEn: "JCR 2025 · IF 3.9 · Q1", href: "https://authors.elsevier.com/a/1nS2y8jaVhezS3",
   },
   {
     yearZh: "2026", yearEn: "2026", roleZh: "通讯", roleEn: "CORRESPONDING AUTHOR",
