@@ -42,6 +42,8 @@ test("renders the Chinese academic homepage with the requested publication label
   assert.equal((html.match(/class="publication-authors"/g) ?? []).length, 7);
   assert.equal((html.match(/<strong>(?:Xiuling Wang|Xiu-Ling Wang)<\/strong>/g) ?? []).length, 7);
   assert.match(html, /Depth-dependent differences between direct total DNA.*?class="publication-authors"[^>]*>.*?Chenyi Mao.*?<strong>Xiuling Wang<\/strong>.*?<\/p>/);
+  assert.match(html, /<em>已接收 · 待出版<\/em>/);
+  assert.doesNotMatch(html, /审稿中|大修已返 · 待决定/);
   assert.match(html, /Mechanical Damage Modulates.*?class="publication-authors"[^>]*>.*?Jingming Ma.*?Mingzheng Zhang.*?Qian Liu.*?<strong>Xiuling Wang<\/strong>.*?<\/p>/);
   assert.match(html, /Pakistan Journal of Botany|Zhong-Ping Tian/);
   assert.match(html, /Zhong-Ping Tian.*?<strong>Xiu-Ling Wang<\/strong>.*?Xiao-Yi Zhao.*?Li Zhuang/);
@@ -80,7 +82,8 @@ test("renders a separate English route and local maintenance assets", async () =
   assert.match(html, /Statistics &amp; microbiome data.*R &amp; reproducible computation.*Microbial ecology laboratory work.*Computational workflows &amp; AI-assisted research/s);
   assert.doesNotMatch(html, /MINOR REVISION RETURNED · AWAITING DECISION/);
   assert.match(html, /<a[^>]*href="\/"[^>]*lang="zh-CN"[^>]*>中文<\/a>/);
-  assert.match(html, /MAJOR REVISION RETURNED · AWAITING DECISION/);
+  assert.match(html, /ACCEPTED · AWAITING PUBLICATION/);
+  assert.doesNotMatch(html, /IN REVIEW|MAJOR REVISION RETURNED · AWAITING DECISION/);
   assert.match(html, /<link rel="canonical" href="https:\/\/xiuling-wang\.pages\.dev\/en\/"/);
   assert.match(html, /<meta property="og:title" content="Xiuling Wang \| Microbial Ecologist"/);
   assert.match(html, /<meta property="og:locale" content="en_US"/);

@@ -126,7 +126,7 @@ const researchAreas = [
 
 const publications = [
   {
-    yearZh: "审稿中", yearEn: "IN REVIEW", roleZh: "通讯", roleEn: "CORRESPONDING AUTHOR", statusZh: "大修已返 · 待决定", statusEn: "MAJOR REVISION RETURNED · AWAITING DECISION",
+    yearZh: "2026", yearEn: "2026", roleZh: "通讯", roleEn: "CORRESPONDING AUTHOR", statusZh: "已接收 · 待出版", statusEn: "ACCEPTED · AWAITING PUBLICATION",
     title: "Depth-dependent differences between direct total DNA and an intracellular-DNA-enriched fraction in bulk-soil bacterial and fungal communities of a Lonicera japonica field",
     authors: ["Chenyi Mao", "Xiuling Wang"],
     journal: "BMC Microbiology", metricZh: "JCR 2025 · IF 5.4 · Q1", metricEn: "JCR 2025 · IF 5.4 · Q1", href: "https://link.springer.com/journal/12866",
