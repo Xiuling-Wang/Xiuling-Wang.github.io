@@ -14,6 +14,21 @@ import {
 
 type Locale = "zh" | "en";
 
+type Publication = {
+  yearZh: string;
+  yearEn: string;
+  roleZh: string;
+  roleEn: string;
+  statusZh?: string;
+  statusEn?: string;
+  title: string;
+  authors: string[];
+  journal: string;
+  metricZh: string;
+  metricEn: string;
+  href: string;
+};
+
 const siteUrl = "https://xiuling-wang.pages.dev/";
 
 const copy = {
@@ -124,12 +139,12 @@ const researchAreas = [
   },
 ];
 
-const publications = [
+const publications: Publication[] = [
   {
-    yearZh: "2026", yearEn: "2026", roleZh: "通讯", roleEn: "CORRESPONDING AUTHOR", statusZh: "已接收 · 待出版", statusEn: "ACCEPTED · AWAITING PUBLICATION",
+    yearZh: "2026", yearEn: "2026", roleZh: "通讯", roleEn: "CORRESPONDING AUTHOR",
     title: "Depth-dependent differences between direct total DNA and an intracellular-DNA-enriched fraction in bulk-soil bacterial and fungal communities of a Lonicera japonica field",
     authors: ["Chenyi Mao", "Xiuling Wang"],
-    journal: "BMC Microbiology", metricZh: "JCR 2025 · IF 5.4 · Q1", metricEn: "JCR 2025 · IF 5.4 · Q1", href: "https://link.springer.com/journal/12866",
+    journal: "BMC Microbiology", metricZh: "JCR 2025 · IF 5.4 · Q1", metricEn: "JCR 2025 · IF 5.4 · Q1", href: "https://doi.org/10.1186/s12866-026-05436-3",
   },
   {
     yearZh: "2026", yearEn: "2026", roleZh: "一作 & 通讯", roleEn: "FIRST & CORRESPONDING AUTHOR",
