@@ -7,8 +7,9 @@ import {
   Database,
   Dna,
   ExternalLink,
+  Layers,
   Microscope,
-  Network,
+  Sprout,
   TerminalSquare,
 } from "lucide-react";
 
@@ -111,6 +112,7 @@ const copy = {
 const researchAreas = [
   {
     number: "01",
+    icon: Layers,
     zhTitle: "气候梯度与深层土壤微生物",
     enTitle: "Climate gradients & deep-soil microbiomes",
     zhDetail: "沿智利干旱至湿润梯度，研究气候、土壤深度与理化性质如何共同塑造细菌群落。",
@@ -118,6 +120,7 @@ const researchAreas = [
   },
   {
     number: "02",
+    icon: Dna,
     zhTitle: "活体与遗迹微生物群落",
     enTitle: "Living and relic microbial communities",
     zhDetail: "分离胞内 DNA（iDNA）与胞外 DNA（eDNA），提高低生物量环境中群落生态解释的准确性。",
@@ -125,6 +128,7 @@ const researchAreas = [
   },
   {
     number: "03",
+    icon: Sprout,
     zhTitle: "根际与食品微生物生态",
     enTitle: "Rhizosphere & food microbiology",
     zhDetail: "从药用植物根际群落到食用菌保鲜，研究微生物群落与植物、环境及生产过程的联系。",
@@ -132,6 +136,7 @@ const researchAreas = [
   },
   {
     number: "04",
+    icon: Microscope,
     zhTitle: "真菌与跨环境微生物组",
     enTitle: "Fungi & cross-environment microbiomes",
     zhDetail: "关注真菌、食用菌及牙菌斑等不同环境中的微生物群落，作为未来研究与综述方向。",
@@ -322,14 +327,17 @@ export default function AcademicHome({ locale }: { locale: Locale }) {
           <p>{t.researchIntro}</p>
         </div>
         <div className="research-list">
-          {researchAreas.map((area) => (
-            <article key={area.number}>
-              <span className="research-number">{area.number}</span>
-              <h3>{isZh ? area.zhTitle : area.enTitle}</h3>
-              <p>{isZh ? area.zhDetail : area.enDetail}</p>
-              <Network size={24} aria-hidden="true" />
-            </article>
-          ))}
+          {researchAreas.map((area) => {
+            const AreaIcon = area.icon;
+            return (
+              <article key={area.number}>
+                <span className="research-number">{area.number}</span>
+                <h3>{isZh ? area.zhTitle : area.enTitle}</h3>
+                <p>{isZh ? area.zhDetail : area.enDetail}</p>
+                <AreaIcon size={22} strokeWidth={1.7} aria-hidden="true" />
+              </article>
+            );
+          })}
         </div>
       </section>
 
