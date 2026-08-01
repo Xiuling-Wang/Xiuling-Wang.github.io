@@ -1,4 +1,4 @@
-# Public profile content snapshot — 2026.07
+# Public profile content snapshot — 2026.08
 
 ## Positioning
 
@@ -22,6 +22,7 @@
 
 ## Publication and manuscript author records
 
+- 2026 — Xiuling Wang; Thomas Friedl; Dirk Wagner. *Intracellular and extracellular DNA archaeal communities share broad climate and depth patterns but differ locally in Chilean soils*. Xiuling Wang: first author. Submitted to *Microbial Ecology*; no public DOI or article URL is available. Current journal metric: `JCR 2025 · IF 4.3`; category-specific JCR quartiles are Q1 in Ecology and Marine & Freshwater Biology and Q2 in Microbiology.
 - 2026 — Chenyi Mao; Xiuling Wang. *Depth-dependent differences between direct total DNA and an intracellular-DNA-enriched fraction in bulk-soil bacterial and fungal communities of a Lonicera japonica field*. Xiuling Wang: corresponding author. Published online in *BMC Microbiology* on 20 July 2026; DOI [10.1186/s12866-026-05436-3](https://doi.org/10.1186/s12866-026-05436-3). The current Springer/Crossref citation does not yet register a volume, issue, page range, or article number.
 - 2026 — Xiuling Wang; Gaodu Liang; Li Zhuang. *Rhizosphere fungal communities of four Ferula species in their native habitats in northern Xinjiang*. Xiuling Wang: first and corresponding author. *Rhizosphere* 39, 101421; DOI [10.1016/j.rhisph.2026.101421](https://doi.org/10.1016/j.rhisph.2026.101421). The [Elsevier author Share Link](https://authors.elsevier.com/a/1nS2y8jaVhezS3) provides free access through 4 September 2026.
 - 2026 — Jingming Ma; Mingzheng Zhang; Qian Liu; Xiuling Wang. *Mechanical Damage Modulates Bacterial and Fungal Succession on the Surface of Hypsizygus marmoreus During Refrigerated Storage*. Xiuling Wang: corresponding author. *Microorganisms* 14(4), 762; DOI [10.3390/microorganisms14040762](https://doi.org/10.3390/microorganisms14040762).

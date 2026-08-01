@@ -67,7 +67,7 @@ const copy = {
     skillsIntro: "微生物组分析、统计建模、实验方法与 AI 辅助的可复现研究流程。",
     contact: "合作与联系",
     contactText: "欢迎就研究合作、数据分析岗位、联合项目及未来学生机会联系。",
-    updated: "网站更新：2026.07",
+    updated: "网站更新：2026.08",
     rights: "© 2026 Xiuling Wang",
   },
   en: {
@@ -104,7 +104,7 @@ const copy = {
     skillsIntro: "Microbiome analysis, statistical modelling, laboratory methods, and reproducible workflows accelerated by AI.",
     contact: "Contact & Collaboration",
     contactText: "I welcome conversations about research collaborations, data-focused roles, joint projects, and future student opportunities.",
-    updated: "Website updated: 2026.07",
+    updated: "Website updated: 2026.08",
     rights: "© 2026 Xiuling Wang",
   },
 } as const;
@@ -145,6 +145,12 @@ const researchAreas = [
 ];
 
 const publications: Publication[] = [
+  {
+    yearZh: "2026", yearEn: "2026", roleZh: "一作", roleEn: "FIRST AUTHOR", statusZh: "已投稿", statusEn: "SUBMITTED",
+    title: "Intracellular and extracellular DNA archaeal communities share broad climate and depth patterns but differ locally in Chilean soils",
+    authors: ["Xiuling Wang", "Thomas Friedl", "Dirk Wagner"],
+    journal: "Microbial Ecology", metricZh: "JCR 2025 · IF 4.3 · Q1（生态学 / 海洋与淡水生物学）· Q2（微生物学）", metricEn: "JCR 2025 · IF 4.3 · Q1 (Ecology / Marine & Freshwater Biology) · Q2 (Microbiology)", href: "https://link.springer.com/journal/248",
+  },
   {
     yearZh: "2026", yearEn: "2026", roleZh: "通讯", roleEn: "CORRESPONDING AUTHOR",
     title: "Depth-dependent differences between direct total DNA and an intracellular-DNA-enriched fraction in bulk-soil bacterial and fungal communities of a Lonicera japonica field",
