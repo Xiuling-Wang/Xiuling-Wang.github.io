@@ -31,6 +31,13 @@ test("renders the Chinese academic homepage with the requested publication label
   assert.match(html, /JCR 2025 · IF 5\.4 · Q1/);
   assert.match(html, /JCR 2025 · IF 4\.3 · Q1（生态学 \/ 海洋与淡水生物学）· Q2（微生物学）/);
   assert.match(html, /JCR 2024（发表年度）· IF 8\.0 · Q1/);
+  assert.match(html, /新锐分区 2026 · 大类：生物学 2区 · 小类：生态学 3区 \/ 海洋与淡水生物学 1区 \/ 微生物学 3区/);
+  assert.match(html, /新锐分区 2026 · 大类：生物学 2区（TOP）· 小类：微生物学 2区/);
+  assert.match(html, /新锐分区 2026 · 大类：生物学 2区 · 小类：植物科学 2区 \/ 微生物学 3区 \/ 土壤科学 3区/);
+  assert.match(html, /新锐分区 2026 · 暂无分区/);
+  assert.match(html, /新锐分区 2026 · 大类：综合性期刊 3区 · 小类：综合性期刊 3区/);
+  assert.match(html, /新锐分区 2026 · 大类：生物学 4区 · 小类：植物科学 4区/);
+  assert.equal((html.match(/class="publication-ranking-xinrui"/g) ?? []).length, 8);
   assert.doesNotMatch(html, /JIF|LAST AUTHOR|CO-CORRESPONDING|共同通讯|WHAT&#x27;S NEXT/);
   assert.doesNotMatch(html, /论文与在审稿件按当前状态列出/);
   assert.match(html, /真菌与跨环境微生物组/);
@@ -84,6 +91,13 @@ test("renders a separate English route and local maintenance assets", async () =
   assert.match(html, /SECOND AUTHOR/);
   assert.match(html, /JCR 2025 · IF 3\.9 · Q1/);
   assert.match(html, /JCR 2025 · IF 4\.3 · Q1 \(Ecology \/ Marine &amp; Freshwater Biology\) · Q2 \(Microbiology\)/);
+  assert.match(html, /XinRui Ranking 2026 · Area: Biology T2 · Categories: Ecology T3 \/ Marine &amp; Freshwater Biology T1 \/ Microbiology T3/);
+  assert.match(html, /XinRui Ranking 2026 · Area: Biology T2 \(Top\) · Category: Microbiology T2/);
+  assert.match(html, /XinRui Ranking 2026 · Area: Biology T2 · Categories: Plant Sciences T2 \/ Microbiology T3 \/ Soil Science T3/);
+  assert.match(html, /XinRui Ranking 2026 · Not currently listed/);
+  assert.match(html, /XinRui Ranking 2026 · Area: Multidisciplinary Science T3 · Category: Multidisciplinary Sciences T3/);
+  assert.match(html, /XinRui Ranking 2026 · Area: Biology T4 · Category: Plant Sciences T4/);
+  assert.equal((html.match(/class="publication-ranking-xinrui"/g) ?? []).length, 8);
   assert.doesNotMatch(html, /<em>PUBLISHED<\/em>/);
   assert.match(html, /href="https:\/\/authors\.elsevier\.com\/a\/1nS2y8jaVhezS3"/);
   assert.match(html, /Rhizosphere · 39 · 101421/);
