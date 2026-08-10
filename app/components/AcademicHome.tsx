@@ -148,12 +148,20 @@ const researchAreas = [
 
 const publications: Publication[] = [
   {
-    yearZh: "2026", yearEn: "2026", roleZh: "一作", roleEn: "FIRST AUTHOR", statusZh: "已投稿", statusEn: "SUBMITTED",
-    title: "Intracellular and extracellular DNA archaeal communities share broad climate and depth patterns but differ locally in Chilean soils",
-    authors: ["Xiuling Wang", "Thomas Friedl", "Dirk Wagner"],
-    journal: "Microbial Ecology", metricZh: "JCR 2025 · IF 4.3 · Q1（生态学 / 海洋与淡水生物学）· Q2（微生物学）", metricEn: "JCR 2025 · IF 4.3 · Q1 (Ecology / Marine & Freshwater Biology) · Q2 (Microbiology)", href: "https://link.springer.com/journal/248",
-    xinruiZh: "新锐分区 2026 · 大类：生物学 2区 · 小类：生态学 3区 / 海洋与淡水生物学 1区 / 微生物学 3区",
-    xinruiEn: "XinRui Ranking 2026 · Area: Biology T2 · Categories: Ecology T3 / Marine & Freshwater Biology T1 / Microbiology T3",
+    yearZh: "2026", yearEn: "2026", roleZh: "一作", roleEn: "FIRST AUTHOR", statusZh: "准备投稿", statusEn: "IN PREPARATION",
+    title: "Archaeal communities in intracellular and extracellular DNA fractions share broad regional patterns but diverge locally in Chilean soils",
+    authors: ["Xiuling Wang", "Alexander Bartholomäus", "Thomas Friedl", "Dirk Wagner"],
+    journal: "Applied Soil Ecology", metricZh: "JCR 2025 · IF 5.6 · Q1（土壤科学）", metricEn: "JCR 2025 · IF 5.6 · Q1 (Soil Science)", href: "https://www.sciencedirect.com/journal/applied-soil-ecology",
+    xinruiZh: "新锐分区 2026 · 大类：农林科学 2区（TOP）· 小类：土壤科学 2区",
+    xinruiEn: "XinRui Ranking 2026 · Area: Agricultural and Forestry Science T2 (Top) · Category: Soil Science T2",
+  },
+  {
+    yearZh: "2026", yearEn: "2026", roleZh: "一作", roleEn: "FIRST AUTHOR", statusZh: "准备投稿", statusEn: "IN PREPARATION",
+    title: "Intact-cell-associated soil metagenomic potential tracks coupled mineral–nutrient–water gradients across Chilean climate and soil depth",
+    authors: ["Xiuling Wang", "Alexander Bartholomäus", "Thomas Friedl", "Dirk Wagner"],
+    journal: "Environmental Microbiome", metricZh: "JCR 2025 · IF 6.2 · Q1（遗传学 / 微生物学）", metricEn: "JCR 2025 · IF 6.2 · Q1 (Genetics & Heredity / Microbiology)", href: "https://link.springer.com/journal/40793",
+    xinruiZh: "新锐分区 2026 · 大类：环境科学与生态学 2区 · 小类：遗传学 2区 / 微生物学 2区",
+    xinruiEn: "XinRui Ranking 2026 · Area: Environment Science and Ecology T2 · Categories: Genetics & Heredity T2 / Microbiology T2",
   },
   {
     yearZh: "2026", yearEn: "2026", roleZh: "通讯", roleEn: "CORRESPONDING AUTHOR",
