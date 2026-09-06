@@ -2,6 +2,12 @@
 
 This folder keeps the public content and update rules needed to maintain or migrate the website. Website code is stored in `app/`, deployable assets in `public/`, and editable source assets in `assets/source/`.
 
+## Current override — September 2026
+
+The [September redesign record](redesign-2026-09.md) supersedes conflicting historical snapshots below. Published papers now precede a separate manuscripts group; all seven published papers remain accessible. Metrics are collapsed, not removed. Rhizosphere uses its permanent DOI. Target journal names, metrics and homepage links are not rendered for in-preparation manuscripts. The historical target-journal fields below must not be used to infer a submission.
+
+Both manuscript title pages were rechecked on 6 September 2026. Archaeal manuscript authors: Xiuling Wang, Alexander Bartholomäus, Lars Ganzert, Thomas Friedl, Rómulo Oses, Dirk Wagner. Metagenomic manuscript authors: Xiuling Wang, Alexander Bartholomäus, Sizhong Yang, Lars Ganzert, Thomas Friedl, Rómulo Oses, Dirk Wagner. Xiuling is marked first and corresponding author in both current sources. Current titles are in `app/components/AcademicHome.tsx`; both remain in preparation, with no submission receipt asserted. Degree not yet awarded; no new current employment claim. The mobile photograph follows the text; the desktop photograph remains left.
+
 The GitHub repository is public. Do not add private manuscript files, local absolute paths, account-recovery details, unpublished reviewer correspondence, or credentials to this repository.
 
 ## Public routes

@@ -2,8 +2,8 @@ import type { Metadata } from "next";
 import "../globals.css";
 
 const siteUrl = new URL("https://xiuling-wang.pages.dev/");
-const title = "王秀玲 Xiuling Wang｜微生物生态研究者";
-const description = "王秀玲的学术与求职主页：微生物生态、气候与深度梯度、iDNA/eDNA、根际与食用菌微生物、真菌群落及微生物组数据分析。";
+const title = "王秀玲 Xiuling Wang｜微生物生态与微生物组研究";
+const description = "微生物生态与微生物组研究者，结合低生物量分子实验、R统计分析与可复现研究，关注土壤、根际与环境梯度；寻找博后及相关研究机会。";
 
 export const metadata: Metadata = {
   metadataBase: siteUrl,

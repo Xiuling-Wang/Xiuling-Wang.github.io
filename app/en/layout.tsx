@@ -2,8 +2,8 @@ import type { Metadata } from "next";
 import "../globals.css";
 
 const siteUrl = new URL("https://xiuling-wang.pages.dev/");
-const title = "Xiuling Wang | Microbial Ecologist";
-const description = "Xiuling Wang’s academic website: microbial ecology, climate and depth gradients, iDNA/eDNA, rhizosphere and fungal microbiomes, R, statistics, and AI-assisted research workflows.";
+const title = "Xiuling Wang | Microbial Ecologist & Microbiome Researcher";
+const description = "Microbial ecologist combining low-biomass molecular methods, R-based statistics and reproducible analysis across soil and rhizosphere microbiomes. Seeking postdoctoral and related research opportunities.";
 
 export const metadata: Metadata = {
   metadataBase: siteUrl,

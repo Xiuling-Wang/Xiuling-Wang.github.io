@@ -4,14 +4,13 @@ import {
   BarChart3,
   Bot,
   Code2,
-  Database,
   Dna,
   ExternalLink,
   Layers,
   Microscope,
   Sprout,
-  TerminalSquare,
 } from "lucide-react";
+import { selectedWork } from "../../content/selected-work";
 
 type Locale = "zh" | "en";
 
@@ -39,25 +38,26 @@ const copy = {
     nav: { profile: "简历", publications: "研究成果", background: "履历", contact: "联系" },
     top: "返回顶部",
     qr: "扫描二维码打开网站",
-    role: "Microbial Ecologist · Open to New Opportunities",
-    hello: "Hi，我是秀玲",
-    focus: "气候 · 深度 · 宿主微生物组",
-    intro: "结合野外生态、分子方法、统计建模与可复现计算分析，理解细菌和真菌群落如何组装、变化并发挥作用。",
-    explore: "查看研究成果",
+    role: "微生物生态 · 微生物组数据 · 可复现研究",
+    hello: "王秀玲",
+    focus: "微生物生态与微生物组研究者",
+    intro: "连接低生物量分子实验、R 统计分析与生态解释，研究气候、土壤深度和根际环境中的微生物群落。",
+    jobIntent: "正在寻找微生物生态与微生物组方向的博后及相关研究机会。",
+    explore: "查看代表项目",
     profile: "简介",
     profileText: [
       "我的研究经历连接地理学、生态学、生物化学与微生物组数据科学。博士阶段在波茨坦大学和德国亥姆霍兹地学研究中心（GFZ）开展研究，重点研究智利气候梯度与深层土壤微生物群落，同时开展根际、食用菌表面细菌与真菌群落研究。",
-      "我能够独立推进实验设计、低生物量样品 DNA 提取、qPCR 与测序准备，并完成微生物群落分析、统计建模、网络分析、科学可视化和论文写作。未来也希望将研究兴趣延伸到牙菌斑等人体相关微生物群落及跨环境综述。",
+      "我的主要工作涵盖实验设计、低生物量样品 DNA 提取、qPCR、群落统计分析、科学可视化和论文写作。宏基因组研究中，我侧重下游分析和生态解释，与合作者完成的上游生物信息分析衔接。",
     ],
     requestCv: "索取完整简历",
     facts: [
-      ["专业背景", "生物化学博士 · 生态学硕士 · 地理学学士"],
+      ["专业背景", "博士研究（尚未获学位）· 生态学硕士 · 地理学学士"],
       ["国际项目", "DFG EarthShape · 德国—智利 · 2018–2025"],
       ["工作语言", "中文（母语）· 英语"],
     ],
-    research: "研究方向",
-    researchIntro: "从土壤、根际和食用菌到更广泛的宿主相关环境，研究微生物群落如何形成、变化并发挥作用。",
-    project: "主要项目",
+    research: "核心能力",
+    researchIntro: "将实验、数据与生态问题连接起来。",
+    project: "代表项目",
     projectTitle: "德国—智利 EarthShape BIOSOILS 合作项目",
     projectText: "参与跨气候区深层土壤研究，围绕气候、土壤深度与微生物群落开展实验和数据分析；优化低生物量土壤 DNA 提取方案，相关流程被 GFZ 实验室采用。",
     projectLink: "查看项目介绍",
@@ -68,45 +68,46 @@ const copy = {
     skills: "技能",
     skillsIntro: "微生物组分析、统计建模、实验方法与 AI 辅助的可复现研究流程。",
     contact: "合作与联系",
-    contactText: "欢迎就研究合作、数据分析岗位、联合项目及未来学生机会联系。",
-    updated: "网站更新：2026.08",
+    contactText: "你的团队正在寻找微生物组研究人员吗？",
+    updated: "网站更新：2026.09",
     rights: "© 2026 Xiuling Wang",
   },
   en: {
     nav: { profile: "Profile", publications: "Research", background: "Experience", contact: "Contact" },
     top: "Back to top",
     qr: "Scan to open this website",
-    role: "Microbial Ecologist · Open to New Opportunities",
-    hello: "Hi, I’m Xiuling",
-    focus: "Climate · depth · host microbiomes",
-    intro: "I integrate field ecology, molecular approaches, statistical modelling, and reproducible computation to understand how bacterial and fungal communities assemble, change, and function.",
-    explore: "Explore my research",
+    role: "MICROBIAL ECOLOGY · DATA · REPRODUCIBILITY",
+    hello: "Xiuling Wang",
+    focus: "Microbial Ecologist & Microbiome Researcher",
+    intro: "I connect low-biomass molecular methods, R-based statistics and ecological interpretation to study microbiomes across climate, soil depth and rhizosphere environments.",
+    jobIntent: "Seeking postdoctoral and related research opportunities in microbial ecology and microbiome science.",
+    explore: "View selected work",
     profile: "Profile",
     profileText: [
       "My research connects geography, ecology, biochemistry, and microbiome data science. During my PhD at the University of Potsdam and the GFZ German Research Centre for Geosciences, I focused on microbial communities across Chilean climate gradients and deep-soil profiles, alongside work on rhizosphere and edible-mushroom bacterial and fungal communities.",
-      "I can independently lead research from experimental design, low-biomass DNA extraction, qPCR, and sequencing preparation to community analysis, statistical modelling, network analysis, scientific visualisation, and manuscript writing. I am also interested in future work on human-associated communities such as dental plaque and in cross-environment reviews.",
+      "My work spans experimental design, low-biomass DNA extraction, qPCR, community statistics, scientific visualisation and manuscript writing. In metagenomics, I focus on downstream analysis and ecological interpretation, building on upstream bioinformatics performed by collaborators.",
     ],
     requestCv: "Request my full CV",
     facts: [
-      ["Background", "PhD in Biochemistry · MSc in Ecology · BSc in Geography"],
+      ["Background", "Doctoral studies (degree not yet awarded) · MSc in Ecology · BSc in Geography"],
       ["International project", "DFG EarthShape · Germany–Chile · 2018–2025"],
       ["Languages", "Chinese (native) · English"],
     ],
-    research: "Research Areas",
-    researchIntro: "From soils, rhizospheres, and edible fungi to broader host-associated environments, I study how microbial communities assemble, change, and function.",
-    project: "Selected Project",
+    research: "Core Expertise",
+    researchIntro: "Connecting experiments, data and ecological questions.",
+    project: "Selected Work",
     projectTitle: "Germany–Chile EarthShape BIOSOILS Project",
     projectText: "I contributed to deep-soil research across climate zones, linking climate, soil depth, and microbial communities through experiments and data analysis. I also optimised a low-biomass soil DNA extraction workflow adopted by the GFZ laboratory.",
     projectLink: "View the project",
-    publications: "Publications & Manuscripts",
+    publications: "Publications",
     background: "Experience",
     education: "Education",
     experience: "Research Experience",
     skills: "Skills",
     skillsIntro: "Microbiome analysis, statistical modelling, laboratory methods, and reproducible workflows accelerated by AI.",
     contact: "Contact & Collaboration",
-    contactText: "I welcome conversations about research collaborations, data-focused roles, joint projects, and future student opportunities.",
-    updated: "Website updated: 2026.08",
+    contactText: "Looking for a microbiome researcher for your team?",
+    updated: "Website updated: 2026.09",
     rights: "© 2026 Xiuling Wang",
   },
 } as const;
@@ -139,26 +140,26 @@ const researchAreas = [
   {
     number: "04",
     icon: Microscope,
-    zhTitle: "真菌与跨环境微生物组",
-    enTitle: "Fungi & cross-environment microbiomes",
-    zhDetail: "关注真菌、食用菌及牙菌斑等不同环境中的微生物群落，作为未来研究与综述方向。",
-    enDetail: "Extending future research and review interests to fungi, edible mushrooms, dental plaque, and microbial communities across contrasting environments.",
+    zhTitle: "微生物组数据与统计",
+    enTitle: "Microbiome data & statistics",
+    zhDetail: "使用 R 整理数据、分析群落差异与环境关联，并将结果转化为可核验的图表和科学论证。",
+    enDetail: "Using R to organise data, analyse community differences and environmental associations, and develop reproducible figures and scientific interpretations.",
   },
 ];
 
 const publications: Publication[] = [
   {
-    yearZh: "2026", yearEn: "2026", roleZh: "一作", roleEn: "FIRST AUTHOR", statusZh: "准备投稿", statusEn: "IN PREPARATION",
-    title: "Archaeal communities in intracellular and extracellular DNA fractions share broad regional patterns but diverge locally in Chilean soils",
-    authors: ["Xiuling Wang", "Alexander Bartholomäus", "Thomas Friedl", "Dirk Wagner"],
+    yearZh: "2026", yearEn: "2026", roleZh: "一作 & 通讯", roleEn: "FIRST & CORRESPONDING AUTHOR", statusZh: "准备投稿", statusEn: "IN PREPARATION",
+    title: "Soil archaeal communities in intra- and extracellular DNA share broad regional patterns but diverge locally along the Chilean Coastal Cordillera",
+    authors: ["Xiuling Wang", "Alexander Bartholomäus", "Lars Ganzert", "Thomas Friedl", "Rómulo Oses", "Dirk Wagner"],
     journal: "Applied Soil Ecology", metricZh: "JCR 2025 · IF 5.6 · Q1（土壤科学）", metricEn: "JCR 2025 · IF 5.6 · Q1 (Soil Science)", href: "https://www.sciencedirect.com/journal/applied-soil-ecology",
     xinruiZh: "新锐分区 2026 · 大类：农林科学 2区（TOP）· 小类：土壤科学 2区",
     xinruiEn: "XinRui Ranking 2026 · Area: Agricultural and Forestry Science T2 (Top) · Category: Soil Science T2",
   },
   {
-    yearZh: "2026", yearEn: "2026", roleZh: "一作", roleEn: "FIRST AUTHOR", statusZh: "准备投稿", statusEn: "IN PREPARATION",
-    title: "Intact-cell-associated soil metagenomic potential tracks coupled mineral–nutrient–water gradients across Chilean climate and soil depth",
-    authors: ["Xiuling Wang", "Alexander Bartholomäus", "Thomas Friedl", "Dirk Wagner"],
+    yearZh: "2026", yearEn: "2026", roleZh: "一作 & 通讯", roleEn: "FIRST & CORRESPONDING AUTHOR", statusZh: "准备投稿", statusEn: "IN PREPARATION",
+    title: "Cell-associated functional gene repertoires differ among climate-soil systems but show limited depth recurrence in the Chilean Coastal Cordillera",
+    authors: ["Xiuling Wang", "Alexander Bartholomäus", "Sizhong Yang", "Lars Ganzert", "Thomas Friedl", "Rómulo Oses", "Dirk Wagner"],
     journal: "Environmental Microbiome", metricZh: "JCR 2025 · IF 6.2 · Q1（遗传学 / 微生物学）", metricEn: "JCR 2025 · IF 6.2 · Q1 (Genetics & Heredity / Microbiology)", href: "https://link.springer.com/journal/40793",
     xinruiZh: "新锐分区 2026 · 大类：环境科学与生态学 2区 · 小类：遗传学 2区 / 微生物学 2区",
     xinruiEn: "XinRui Ranking 2026 · Area: Environment Science and Ecology T2 · Categories: Genetics & Heredity T2 / Microbiology T2",
@@ -175,7 +176,7 @@ const publications: Publication[] = [
     yearZh: "2026", yearEn: "2026", roleZh: "一作 & 通讯", roleEn: "FIRST & CORRESPONDING AUTHOR",
     title: "Rhizosphere fungal communities of four Ferula species in their native habitats in northern Xinjiang",
     authors: ["Xiuling Wang", "Gaodu Liang", "Li Zhuang"],
-    journal: "Rhizosphere · 39 · 101421", metricZh: "JCR 2025 · IF 3.9 · Q1", metricEn: "JCR 2025 · IF 3.9 · Q1", href: "https://authors.elsevier.com/a/1nS2y8jaVhezS3",
+    journal: "Rhizosphere · 39 · 101421", metricZh: "JCR 2025 · IF 3.9 · Q1", metricEn: "JCR 2025 · IF 3.9 · Q1", href: "https://doi.org/10.1016/j.rhisph.2026.101421",
     xinruiZh: "新锐分区 2026 · 大类：生物学 2区 · 小类：植物科学 2区 / 微生物学 3区 / 土壤科学 3区",
     xinruiEn: "XinRui Ranking 2026 · Area: Biology T2 · Categories: Plant Sciences T2 / Microbiology T3 / Soil Science T3",
   },
@@ -250,8 +251,8 @@ const skills = [
     icon: Bot,
     zhTitle: "计算工作流与 AI 辅助研究",
     enTitle: "Computational workflows & AI-assisted research",
-    zhText: "Codex 资深用户，熟练使用 Claude Code 与 ChatGPT；擅长复杂任务拆解、智能体协作、提示设计、结果校验和长流程维护。",
-    enText: "Advanced Codex user with extensive experience in Claude Code and ChatGPT; skilled in task decomposition, agent collaboration, prompting, output validation, and long-running workflows.",
+    zhText: "熟练使用 Codex、Claude Code 与 ChatGPT 辅助编程、文档整理和重复任务处理，同时保留方法判断、结果核验与可复现性控制。",
+    enText: "Experienced with Codex, Claude Code and ChatGPT for coding, documentation and repetitive tasks, while retaining methodological judgement, output validation and reproducibility controls.",
     tags: ["Codex", "Claude Code", "ChatGPT", "Agent workflows"],
   },
 ];
@@ -273,6 +274,39 @@ function SkillCard({ skill, locale }: { skill: (typeof skills)[number]; locale: 
       <p>{locale === "zh" ? skill.zhText : skill.enText}</p>
       <div className="skill-tags">{skill.tags.map((tag) => <span key={tag}>{tag}</span>)}</div>
     </article>
+  );
+}
+
+function PublicationCard({ publication: p, index, locale }: { publication: Publication; index: number; locale: Locale }) {
+  const isZh = locale === "zh";
+  const isManuscript = Boolean(p.statusZh);
+  return (
+    <li className={isManuscript ? "publication-manuscript" : undefined}>
+      <article className="publication-card">
+        <span className="publication-count">{String(index + 1).padStart(2, "0")}</span>
+        <div className="publication-main">
+          <div className="publication-topline">
+            <span>{isZh ? p.yearZh : p.yearEn}</span>
+            <b>{isZh ? p.roleZh : p.roleEn}</b>
+            {isManuscript && <em>{isZh ? p.statusZh : p.statusEn}</em>}
+          </div>
+          <h3>{isManuscript ? p.title : <a href={p.href} target="_blank" rel="noopener noreferrer">{p.title} <ArrowUpRight size={16} aria-hidden="true" /></a>}</h3>
+          <p className="publication-authors" aria-label={isZh ? "作者" : "Authors"}>
+            {p.authors.map((author, authorIndex) => <span key={author}>{authorIndex > 0 && ", "}{author === "Xiuling Wang" || author === "Xiu-Ling Wang" ? <strong>{author}</strong> : author}</span>)}
+          </p>
+          {!isManuscript && <>
+            <p className="publication-journal">{p.journal}</p>
+            <details className="journal-metrics">
+              <summary>{isZh ? "期刊指标与分区" : "Journal metrics & rankings"}</summary>
+              <div className="publication-details">
+                <strong>{isZh ? p.metricZh : p.metricEn}</strong>
+                <strong className="publication-ranking-xinrui">{isZh ? p.xinruiZh : p.xinruiEn}</strong>
+              </div>
+            </details>
+          </>}
+        </div>
+      </article>
+    </li>
   );
 }
 
@@ -333,12 +367,17 @@ export default function AcademicHome({ locale }: { locale: Locale }) {
             <h1>{t.hello} <span className="hero-sprout" aria-hidden="true">🌱</span></h1>
             <p className="hero-focus">{t.focus}</p>
             <p className="hero-lead">{t.intro}</p>
+            <p className="job-intent">{t.jobIntent}</p>
             <div className="hero-actions">
-              <a className="button primary" href="#publications">{t.explore} <ArrowDown size={15} /></a>
-              <a className="button secondary" href="https://orcid.org/0000-0002-8006-7162" target="_blank" rel="noopener noreferrer">ORCID <ArrowUpRight size={15} /></a>
+              <a className="button primary" href="mailto:wang.xiuling@outlook.com">{isZh ? "联系我" : "Email me"} <ArrowUpRight size={15} /></a>
+              <a className="button secondary" href="#project">{t.explore} <ArrowDown size={15} /></a>
             </div>
           </div>
         </section>
+
+        <ul className="capability-strip" aria-label={isZh ? "研究专长速览" : "Research expertise at a glance"}>
+          {(isZh ? ["土壤与根际微生物组", "16S · ITS · 宏基因组", "R · 统计 · 可视化", "低生物量分子实验"] : ["Soil & rhizosphere microbiomes", "16S · ITS · Metagenomics", "R · Statistics · Visualisation", "Low-biomass molecular methods"]).map((item) => <li key={item}>{item}</li>)}
+        </ul>
 
       <section className="profile section" id="profile">
         <div className="section-title"><span>01</span><h2>{t.profile}</h2></div>
@@ -390,39 +429,30 @@ export default function AcademicHome({ locale }: { locale: Locale }) {
             <div className="climate-caption">climate × depth × microbes</div>
           </div>
         </article>
+        <div className="work-list">
+          {selectedWork.map((work, index) => <article className="work-row" key={work.id}>
+            <span className="work-number">0{index + 2}</span>
+            <div>
+              <h3>{work.title[locale]}</h3>
+              <p>{work.question[locale]}</p>
+              <p><strong>{isZh ? "我的贡献：" : "My contribution: "}</strong>{work.contribution[locale]}</p>
+              <p className="work-methods">{work.methods}</p>
+              {work.href ? <a className="text-link" href={work.href} target="_blank" rel="noopener noreferrer">{work.outcome[locale]} <ArrowUpRight size={15} /></a> : <p className="work-outcome">{work.outcome[locale]}</p>}
+            </div>
+          </article>)}
+        </div>
       </section>
 
       <section className="publications section" id="publications">
         <div className="section-heading publication-heading">
           <div className="section-title"><span>04</span><h2>{t.publications}</h2></div>
         </div>
-        <ol className="publication-list" aria-label={isZh ? "学术成果列表" : "Publications and manuscripts"}>
-          {publications.map((publication, index) => (
-            <li key={publication.title} className={publication.statusZh ? "publication-manuscript" : undefined}>
-              <a href={publication.href} target="_blank" rel="noopener noreferrer">
-                <span className="publication-count">{String(index + 1).padStart(2, "0")}</span>
-                <div className="publication-main">
-                  <div className="publication-topline">
-                    <span>{isZh ? publication.yearZh : publication.yearEn}</span>
-                    <b>{isZh ? publication.roleZh : publication.roleEn}</b>
-                    {publication.statusZh && <em>{isZh ? publication.statusZh : publication.statusEn}</em>}
-                  </div>
-                  <h3>{publication.title}</h3>
-                  <p className="publication-authors" aria-label={isZh ? "作者" : "Authors"}>
-                    {publication.authors.map((author, authorIndex) => (
-                      <span key={author}>{authorIndex > 0 && ", "}{author === "Xiuling Wang" || author === "Xiu-Ling Wang" ? <strong>{author}</strong> : author}</span>
-                    ))}
-                  </p>
-                  <div className="publication-details">
-                    <span>{publication.journal}</span>
-                    <strong>{isZh ? publication.metricZh : publication.metricEn}</strong>
-                    <strong className="publication-ranking-xinrui">{isZh ? publication.xinruiZh : publication.xinruiEn}</strong>
-                  </div>
-                </div>
-                <ArrowUpRight className="publication-arrow" size={20} aria-hidden="true" />
-              </a>
-            </li>
-          ))}
+        <ol className="publication-list" aria-label={isZh ? "已发表论文" : "Published papers"}>
+          {publications.filter((p) => !p.statusZh).map((publication, index) => <PublicationCard key={publication.title} publication={publication} index={index} locale={locale} />)}
+        </ol>
+        <h3 className="ongoing-heading" id="ongoing-work">{isZh ? "进行中的稿件" : "Manuscripts in Progress"}</h3>
+        <ol className="publication-list" aria-label={isZh ? "进行中的稿件" : "Manuscripts in progress"}>
+          {publications.filter((p) => p.statusZh).map((publication, index) => <PublicationCard key={publication.title} publication={publication} index={index} locale={locale} />)}
         </ol>
       </section>
 
@@ -431,7 +461,7 @@ export default function AcademicHome({ locale }: { locale: Locale }) {
         <div className="timeline-grid">
           <div>
             <p className="timeline-label">{t.education}</p>
-            <article><time>2019–2025</time><div><h3>{isZh ? "生物化学博士" : "PhD in Biochemistry"}</h3><p>{isZh ? "波茨坦大学 · 博士研究在德国亥姆霍兹地学研究中心（GFZ）开展" : "University of Potsdam · doctoral research at the GFZ German Research Centre for Geosciences"}</p></div></article>
+            <article><time>{isZh ? "2019–至今" : "2019–present"}</time><div><h3>{isZh ? "博士研究 · 学位尚未授予" : "Doctoral studies · degree not yet awarded"}</h3><p>{isZh ? "波茨坦大学 · 博士研究在德国亥姆霍兹地学研究中心（GFZ）开展；正在完成论文" : "University of Potsdam · doctoral research at the GFZ German Research Centre for Geosciences; completing the thesis"}</p></div></article>
             <article><time>2016–2019</time><div><h3>{isZh ? "生态学硕士" : "MSc in Ecology"}</h3><p>{isZh ? "石河子大学 · 微生物生态" : "Shihezi University · microbial ecology"}</p></div></article>
             <article><time>2011–2015</time><div><h3>{isZh ? "地理学学士" : "BSc in Geography"}</h3><p>{isZh ? "郑州师范学院" : "Zhengzhou Normal University"}</p></div></article>
           </div>
@@ -449,14 +479,12 @@ export default function AcademicHome({ locale }: { locale: Locale }) {
           <p>{t.skillsIntro}</p>
         </div>
         <div className="skills-grid">{skills.map((skill) => <SkillCard key={skill.enTitle} skill={skill} locale={locale} />)}</div>
-        <div className="platform-strip" aria-label="Platforms and methods">
-          <span><TerminalSquare size={18} /> Codex</span><span><Bot size={18} /> Claude Code</span><span><Bot size={18} /> ChatGPT</span><span><Code2 size={18} /> R</span><span><BarChart3 size={18} /> SPSS</span><span><Database size={18} /> Microbiome data</span><span><Dna size={18} /> 16S / ITS</span>
-        </div>
       </section>
 
       <section className="contact section" id="contact">
         <p className="contact-label"><span /> <span className="contact-label-text">{t.contact} <span className="contact-wave" aria-hidden="true">👋</span></span></p>
         <h2>{t.contactText}</h2>
+        <p className="contact-intent">{t.jobIntent} {isZh ? "也欢迎科研合作。" : "Research collaborations are also welcome."}</p>
         <div className="contact-row">
           <a className="contact-email" href="mailto:wang.xiuling@outlook.com">wang.xiuling@outlook.com <ArrowUpRight size={22} /></a>
           <div className="profile-links">

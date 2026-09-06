@@ -1,5 +1,7 @@
 # Public profile content snapshot — 2026.08
 
+Historical snapshot, retained for provenance only. For the September 2026 local redesign, current manuscript metadata and presentation decisions, see `site-maintenance.md` and `redesign-2026-09.md`. Do not restore the older author lists, target journals or degree wording from this snapshot.
+
 ## Positioning
 
 - Microbial ecologist studying how environmental gradients, soil depth, and host-associated environments shape microbial communities

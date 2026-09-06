@@ -22,12 +22,12 @@ test("GitHub Pages export is framework-free static HTML", async () => {
     assert.match(html, /href="#contact"/);
   }
 
-  assert.match(zh, /气候 · 深度 · 宿主微生物组/);
-  assert.match(en, /Climate · depth · host microbiomes/);
+  assert.match(zh, /微生物生态与微生物组研究者/);
+  assert.match(en, /Microbial Ecologist &amp; Microbiome Researcher/);
   assert.match(zh, /<html lang="zh-CN">/);
   assert.match(en, /<html lang="en">/);
   assert.match(en, /<link rel="canonical" href="https:\/\/xiuling-wang\.pages\.dev\/en\/"/);
-  assert.match(en, /<meta property="og:title" content="Xiuling Wang \| Microbial Ecologist"/);
+  assert.match(en, /<meta property="og:title" content="Xiuling Wang \| Microbial Ecologist &amp; Microbiome Researcher"/);
   assert.match(en, /<meta property="og:locale" content="en_US"/);
   assert.doesNotMatch(en, /<meta property="og:title" content="王秀玲/);
   assert.match(notFound, /页面未找到/);
@@ -36,6 +36,6 @@ test("GitHub Pages export is framework-free static HTML", async () => {
   assert.match(robots, /User-agent: \*/);
   assert.match(robots, /Sitemap: https:\/\/xiuling-wang\.pages\.dev\/sitemap\.xml/);
   assert.match(sitemap, /<loc>https:\/\/xiuling-wang\.pages\.dev\/en\/<\/loc>/);
-  assert.match(sitemap, /<lastmod>2026-07-17<\/lastmod>/);
+  assert.match(sitemap, /<lastmod>2026-09-06<\/lastmod>/);
   assert.equal(assets.some((name) => /\.(?:m?js|map)$/.test(name)), false);
 });
