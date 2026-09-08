@@ -2,7 +2,13 @@
 
 This folder keeps the public content and update rules needed to maintain or migrate the website. Website code is stored in `app/`, deployable assets in `public/`, and editable source assets in `assets/source/`.
 
-## Current override — September 2026
+## Current override — 8 September 2026
+
+The archaeal manuscript was submitted to Applied Soil Ecology on 7 September 2026. Display `已投稿` / `SUBMITTED`; do not infer peer-review status. The metagenomic manuscript targets Geoderma and remains `准备投稿` / `IN PREPARATION`, using the title from the current V06 manuscript. Both manuscript cards now display the journal with an explicit submitted/target label; journal metrics remain hidden. These facts supersede all older manuscript snapshots below.
+
+Two-page Chinese and English academic CVs are available at `public/cv/Xiuling_Wang_CV_ZH.pdf` and `public/cv/Xiuling_Wang_CV_EN.pdf`, linked from the corresponding profile sections. Rebuild with `scripts/build-academic-cv.py` using Python with ReportLab. Publication titles and authors are read from the website content. The CV records doctoral studies without claiming an awarded degree, current location in China, availability for full-time research, and the integrated EarthShape research programme. Review both PDFs visually after rebuilding.
+
+## Historical override — early September 2026
 
 The [September redesign record](redesign-2026-09.md) supersedes conflicting historical snapshots below. Published papers now precede a separate manuscripts group; all seven published papers remain accessible. Metrics are collapsed, not removed. Rhizosphere uses its permanent DOI. Target journal names, metrics and homepage links are not rendered for in-preparation manuscripts. The historical target-journal fields below must not be used to infer a submission.
 

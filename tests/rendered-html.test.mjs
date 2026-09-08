@@ -37,11 +37,14 @@ for (const locale of ["zh", "en"]) {
     assert.equal((manuscripts.match(/class="publication-authors"/g) ?? []).length, 2);
     assert.equal((html.match(/<strong>(?:Xiuling Wang|Xiu-Ling Wang)<\/strong>/g) ?? []).length, 9);
     assert.doesNotMatch(published, /IN PREPARATION|准备投稿/);
-    assert.doesNotMatch(manuscripts, /<a\b|Applied Soil Ecology|Environmental Microbiome|JCR|IF |新锐|XinRui/);
-    assert.equal((manuscripts.match(zh ? /<em>准备投稿<\/em>/g : /<em>IN PREPARATION<\/em>/g) ?? []).length, 2);
+    assert.doesNotMatch(manuscripts, /Environmental Microbiome|JCR|IF |新锐|XinRui/);
+    assert.match(manuscripts, /Applied Soil Ecology/);
+    assert.match(manuscripts, /Geoderma/);
+    assert.equal((manuscripts.match(zh ? /<em>准备投稿<\/em>/g : /<em>IN PREPARATION<\/em>/g) ?? []).length, 1);
+    assert.equal((manuscripts.match(zh ? /<em>已投稿<\/em>/g : /<em>SUBMITTED<\/em>/g) ?? []).length, 1);
     assert.match(manuscripts, /Soil archaeal communities.*?Lars Ganzert.*?Rómulo Oses.*?Dirk Wagner/);
-    assert.match(manuscripts, /Cell-associated functional gene repertoires.*?Sizhong Yang.*?Lars Ganzert.*?Rómulo Oses.*?Dirk Wagner/);
-    assert.doesNotMatch(html, /SUBMITTED|IN REVIEW|已投稿|审稿中|LAST AUTHOR|CO-CORRESPONDING|JIF/);
+    assert.match(manuscripts, /Scale-dependent organisation.*?Sizhong Yang.*?Lars Ganzert.*?Rómulo Oses.*?Dirk Wagner/);
+    assert.doesNotMatch(html, /IN REVIEW|审稿中|LAST AUTHOR|CO-CORRESPONDING|JIF/);
 
     const order = ["Depth-dependent differences", "Rhizosphere fungal communities", "Mechanical Damage Modulates", "The effects of climate", "Low Temperature", "Bacterial diversity", "A unique mountainous"];
     const positions = order.map((title) => published.indexOf(title));

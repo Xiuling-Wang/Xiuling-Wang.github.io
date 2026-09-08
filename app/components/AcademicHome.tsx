@@ -49,7 +49,7 @@ const copy = {
       "我的研究经历连接地理学、生态学、生物化学与微生物组数据科学。博士阶段在波茨坦大学和德国亥姆霍兹地学研究中心（GFZ）开展研究，重点研究智利气候梯度与深层土壤微生物群落，同时开展根际、食用菌表面细菌与真菌群落研究。",
       "我的主要工作涵盖实验设计、低生物量样品 DNA 提取、qPCR、群落统计分析、科学可视化和论文写作。宏基因组研究中，我侧重下游分析和生态解释，与合作者完成的上游生物信息分析衔接。",
     ],
-    requestCv: "索取完整简历",
+    requestCv: "下载科研简历（PDF）",
     facts: [
       ["专业背景", "博士研究（尚未获学位）· 生态学硕士 · 地理学学士"],
       ["国际项目", "DFG EarthShape · 德国—智利 · 2018–2025"],
@@ -87,7 +87,7 @@ const copy = {
       "My research connects geography, ecology, biochemistry, and microbiome data science. During my PhD at the University of Potsdam and the GFZ German Research Centre for Geosciences, I focused on microbial communities across Chilean climate gradients and deep-soil profiles, alongside work on rhizosphere and edible-mushroom bacterial and fungal communities.",
       "My work spans experimental design, low-biomass DNA extraction, qPCR, community statistics, scientific visualisation and manuscript writing. In metagenomics, I focus on downstream analysis and ecological interpretation, building on upstream bioinformatics performed by collaborators.",
     ],
-    requestCv: "Request my full CV",
+    requestCv: "Download academic CV (PDF)",
     facts: [
       ["Background", "Doctoral studies (degree not yet awarded) · MSc in Ecology · BSc in Geography"],
       ["International project", "DFG EarthShape · Germany–Chile · 2018–2025"],
@@ -149,7 +149,7 @@ const researchAreas = [
 
 const publications: Publication[] = [
   {
-    yearZh: "2026", yearEn: "2026", roleZh: "一作 & 通讯", roleEn: "FIRST & CORRESPONDING AUTHOR", statusZh: "准备投稿", statusEn: "IN PREPARATION",
+    yearZh: "2026", yearEn: "2026", roleZh: "一作 & 通讯", roleEn: "FIRST & CORRESPONDING AUTHOR", statusZh: "已投稿", statusEn: "SUBMITTED",
     title: "Soil archaeal communities in intra- and extracellular DNA share broad regional patterns but diverge locally along the Chilean Coastal Cordillera",
     authors: ["Xiuling Wang", "Alexander Bartholomäus", "Lars Ganzert", "Thomas Friedl", "Rómulo Oses", "Dirk Wagner"],
     journal: "Applied Soil Ecology", metricZh: "JCR 2025 · IF 5.6 · Q1（土壤科学）", metricEn: "JCR 2025 · IF 5.6 · Q1 (Soil Science)", href: "https://www.sciencedirect.com/journal/applied-soil-ecology",
@@ -158,11 +158,11 @@ const publications: Publication[] = [
   },
   {
     yearZh: "2026", yearEn: "2026", roleZh: "一作 & 通讯", roleEn: "FIRST & CORRESPONDING AUTHOR", statusZh: "准备投稿", statusEn: "IN PREPARATION",
-    title: "Cell-associated functional gene repertoires differ among climate-soil systems but show limited depth recurrence in the Chilean Coastal Cordillera",
+    title: "Scale-dependent organisation of cell-associated microbial functional genes across climate-soil systems and soil depth in granitoid soils of the Chilean Coastal Cordillera",
     authors: ["Xiuling Wang", "Alexander Bartholomäus", "Sizhong Yang", "Lars Ganzert", "Thomas Friedl", "Rómulo Oses", "Dirk Wagner"],
-    journal: "Environmental Microbiome", metricZh: "JCR 2025 · IF 6.2 · Q1（遗传学 / 微生物学）", metricEn: "JCR 2025 · IF 6.2 · Q1 (Genetics & Heredity / Microbiology)", href: "https://link.springer.com/journal/40793",
-    xinruiZh: "新锐分区 2026 · 大类：环境科学与生态学 2区 · 小类：遗传学 2区 / 微生物学 2区",
-    xinruiEn: "XinRui Ranking 2026 · Area: Environment Science and Ecology T2 · Categories: Genetics & Heredity T2 / Microbiology T2",
+    journal: "Geoderma", metricZh: "", metricEn: "", href: "https://www.sciencedirect.com/journal/geoderma",
+    xinruiZh: "",
+    xinruiEn: "",
   },
   {
     yearZh: "2026", yearEn: "2026", roleZh: "通讯", roleEn: "CORRESPONDING AUTHOR",
@@ -294,6 +294,7 @@ function PublicationCard({ publication: p, index, locale }: { publication: Publi
           <p className="publication-authors" aria-label={isZh ? "作者" : "Authors"}>
             {p.authors.map((author, authorIndex) => <span key={author}>{authorIndex > 0 && ", "}{author === "Xiuling Wang" || author === "Xiu-Ling Wang" ? <strong>{author}</strong> : author}</span>)}
           </p>
+          {isManuscript && <p className="publication-journal">{p.statusEn === "SUBMITTED" ? (isZh ? "已投稿期刊：" : "Submitted to: ") : (isZh ? "拟投稿期刊：" : "Target journal: ")}<a href={p.href} target="_blank" rel="noopener noreferrer">{p.journal}</a></p>}
           {!isManuscript && <>
             <p className="publication-journal">{p.journal}</p>
             <details className="journal-metrics">
@@ -384,7 +385,7 @@ export default function AcademicHome({ locale }: { locale: Locale }) {
         <div className="profile-grid">
           <div className="profile-copy">
             {t.profileText.map((paragraph) => <p key={paragraph}>{paragraph}</p>)}
-            <a className="text-link" href="mailto:wang.xiuling@outlook.com?subject=CV%20request%20-%20Xiuling%20Wang">{t.requestCv} <ArrowUpRight size={15} /></a>
+            <a className="text-link" href={isZh ? "/cv/Xiuling_Wang_CV_ZH.pdf" : "/cv/Xiuling_Wang_CV_EN.pdf"}>{t.requestCv} <ArrowUpRight size={15} /></a>
           </div>
           <div className="fact-list">
             {t.facts.map(([label, value]) => <article key={label}><span>{label}</span><strong>{value}</strong></article>)}
