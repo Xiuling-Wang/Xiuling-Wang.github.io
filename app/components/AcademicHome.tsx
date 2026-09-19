@@ -149,7 +149,7 @@ const researchAreas = [
 
 const publications: Publication[] = [
   {
-    yearZh: "2026", yearEn: "2026", roleZh: "一作 & 通讯", roleEn: "FIRST & CORRESPONDING AUTHOR", statusZh: "已投稿", statusEn: "SUBMITTED",
+    yearZh: "2026", yearEn: "2026", roleZh: "一作 & 通讯", roleEn: "FIRST & CORRESPONDING AUTHOR", statusZh: "外审中", statusEn: "Under peer review",
     title: "Soil archaeal communities in intra- and extracellular DNA share broad regional patterns but diverge locally along the Chilean Coastal Cordillera",
     authors: ["Xiuling Wang", "Alexander Bartholomäus", "Lars Ganzert", "Thomas Friedl", "Rómulo Oses", "Dirk Wagner"],
     journal: "Applied Soil Ecology", metricZh: "JCR 2025 · IF 5.6 · Q1（土壤科学）", metricEn: "JCR 2025 · IF 5.6 · Q1 (Soil Science)", href: "https://www.sciencedirect.com/journal/applied-soil-ecology",
@@ -294,7 +294,7 @@ function PublicationCard({ publication: p, index, locale }: { publication: Publi
           <p className="publication-authors" aria-label={isZh ? "作者" : "Authors"}>
             {p.authors.map((author, authorIndex) => <span key={author}>{authorIndex > 0 && ", "}{author === "Xiuling Wang" || author === "Xiu-Ling Wang" ? <strong>{author}</strong> : author}</span>)}
           </p>
-          {isManuscript && <p className="publication-journal">{p.statusEn === "SUBMITTED" ? (isZh ? "已投稿期刊：" : "Submitted to: ") : (isZh ? "拟投稿期刊：" : "Target journal: ")}<a href={p.href} target="_blank" rel="noopener noreferrer">{p.journal}</a></p>}
+          {isManuscript && <p className="publication-journal">{p.statusEn === "Under peer review" ? (isZh ? "外审期刊：" : "Under review at: ") : p.statusEn === "SUBMITTED" ? (isZh ? "已投稿期刊：" : "Submitted to: ") : (isZh ? "拟投稿期刊：" : "Target journal: ")}<a href={p.href} target="_blank" rel="noopener noreferrer">{p.journal}</a></p>}
           {!isManuscript && <>
             <p className="publication-journal">{p.journal}</p>
             <details className="journal-metrics">

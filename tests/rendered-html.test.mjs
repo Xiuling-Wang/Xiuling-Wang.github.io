@@ -41,7 +41,7 @@ for (const locale of ["zh", "en"]) {
     assert.match(manuscripts, /Applied Soil Ecology/);
     assert.match(manuscripts, /Geoderma/);
     assert.equal((manuscripts.match(zh ? /<em>准备投稿<\/em>/g : /<em>IN PREPARATION<\/em>/g) ?? []).length, 1);
-    assert.equal((manuscripts.match(zh ? /<em>已投稿<\/em>/g : /<em>SUBMITTED<\/em>/g) ?? []).length, 1);
+    assert.equal((manuscripts.match(zh ? /<em>外审中<\/em>/g : /<em>Under peer review<\/em>/g) ?? []).length, 1);
     assert.match(manuscripts, /Soil archaeal communities.*?Lars Ganzert.*?Rómulo Oses.*?Dirk Wagner/);
     assert.match(manuscripts, /Scale-dependent organisation.*?Sizhong Yang.*?Lars Ganzert.*?Rómulo Oses.*?Dirk Wagner/);
     assert.doesNotMatch(html, /IN REVIEW|审稿中|LAST AUTHOR|CO-CORRESPONDING|JIF/);
